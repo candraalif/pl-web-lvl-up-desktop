@@ -1,8 +1,8 @@
 /* src/app.js */
 
 // Styles
-import 'styles/_app.scss'
+import './assets/styles/_app.scss'
 
 $(function() {
-  require('scripts/demo')
+  require('./assets/scripts/demo')
 })
