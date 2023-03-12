@@ -1,0 +1,23 @@
+mixin menu(currentPage)
+  header
+    .container
+      nav.menu
+        ul.menu__ul.ml-auto
+          li.menu__item
+            a.menu__link(href='/', class=currentPage === 'homepage' ? 'active' : '')
+              img(src=require('images/traveloka-logo.png'), alt="Traveloka", title="Traveloka", class="image")
+              |  Traveloka
+          li.menu__item
+            a.menu__link(href='/en-id', class=currentPage === 'homepage' ? 'active' : '') EN
+          li.menu__item
+            a.menu__link(href='#') Currency
+          li.menu__item
+            a.menu__link(href='#', class=currentPage === 'partner' ? 'active' : '') Partner
+          li.menu__item
+            a.menu__link(href='#', class=currentPage === 'support' ? 'active' : '') Support
+          li.menu__item
+            a.menu__link(href='#', class=currentPage === 'deals' ? 'active' : '') Deals
+          li.menu__item
+            a.menu__link(href='#', class=currentPage === 'booking' ? 'active' : '') Booking
+          li.menu__item
+            a.menu__link(href='#', class=currentPage === 'profile' ? 'active' : '') Hi, Raisa

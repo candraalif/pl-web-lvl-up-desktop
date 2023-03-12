@@ -1,0 +1,30 @@
+/* src/assets/styles/components/_button.scss  */
+
+.clean-button {
+  border: none;
+  background: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  @extend .clean-button;
+  font-family: $defaultfont;
+  border-radius: 6px;
+  color: white;
+  padding: 16px 40px;
+  background: $blue-primary;
+  transition: all ease 0.2s;
+  gap: 8px;
+  &:hover,
+  &:focus {
+    background: $blue-secondary;
+  }
+  &.btn-block {
+    display: block;
+  }
+}

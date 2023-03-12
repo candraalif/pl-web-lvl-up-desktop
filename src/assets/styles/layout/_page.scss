@@ -1,0 +1,18 @@
+/* src/assets/styles/layout/_page.scss  */
+.home__page {
+  text-align: center;
+  padding: 40px 0;
+
+  .choose-prototype {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+
+    a.btn {
+      width: calc(50% - 8px);
+    }
+  }
+}

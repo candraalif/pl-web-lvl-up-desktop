@@ -1,0 +1,62 @@
+/* src/assets/styles/base/_fonts.scss  */
+
+/*
+  Museo Sans
+*/
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 900;
+  src: url('@~fonts/MuseoSans_900.otf');
+}
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 700;
+  src: url('@~fonts/MuseoSans_700.otf');
+}
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: 500;
+  src: url('@~fonts/MuseoSans_500.otf');
+}
+
+$museosans: 'MuseoSans', sans-serif;
+
+/*
+  GodwitText
+*/
+
+@font-face {
+  font-family: 'GodwitText';
+  font-weight: 700;
+  src: url('@~fonts/GodwitText-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'GodwitText';
+  font-weight: 500;
+  src: url('@~fonts/GodwitText-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'GodwitText';
+  font-weight: 400;
+  src: url('@~fonts/GodwitText-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'GodwitText';
+  font-weight: 300;
+  src: url('@~fonts/GodwitText-Light.ttf');
+}
+
+$godwittext: 'GodwitText', sans-serif;
+
+/*
+  Set the Default Font
+*/
+
+$defaultfont: $godwittext;
+$defaultfontweight: 400;

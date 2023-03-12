@@ -1,0 +1,22 @@
+/* src/assets/styles/components/_footer.scss  */
+
+.footer {
+  margin-top: 40px;
+  background: $dark-stain;
+  color: $light-primary;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  p {
+    font-size: 12px;
+  }
+  a {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    color: inherit;
+  }
+}

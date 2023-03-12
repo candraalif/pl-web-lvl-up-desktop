@@ -1,0 +1,26 @@
+/* src/assets/styles/layout/_general.scss  */
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  font-family: $defaultfont;
+  font-weight: $defaultfontweight;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $dark-stain;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
