@@ -20,11 +20,25 @@
   background: $blue-primary;
   transition: all ease 0.2s;
   gap: 8px;
+
   &:hover,
   &:focus {
     background: $blue-secondary;
   }
   &.btn-block {
     display: block;
+  }
+
+  &.btn-small {
+    padding: 8px 12px;
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &.btn-outline {
+    background: transparent;
+    border: 1px solid $light-primary;
   }
 }
