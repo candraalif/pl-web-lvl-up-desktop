@@ -1,9 +1,10 @@
 mixin menu(currentPage)
-  header
+  header#header
     .container
       nav.menu
         a.menu__brand(href='/', class=currentPage === 'homepage' ? 'active' : '')
-          img(src=require('images/traveloka-logo-white.png'), alt="Traveloka", title="Traveloka", class="image")
+          img.logo-white(src=require('images/traveloka-logo-white.png'), alt="Traveloka", title="Traveloka", class="image")
+          img.logo-default(src=require('images/traveloka-logo.png'), alt="Traveloka", title="Traveloka", class="image")
         ul.menu__ul
           li.menu__item
             a.menu__link(href='/en-id', class=currentPage === 'homepage' ? 'active' : '')

@@ -4,8 +4,9 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10; 
+  z-index: 10;
   background: linear-gradient(180deg, rgba(3, 18, 26, 0.325) 50%, rgba(3, 18, 26, 0) 100%);
+  transition: all ease 0.2s;
 
   .menu {
     color: $light-primary;
@@ -35,6 +36,14 @@ header {
       height: 16px;
     }
   }
+  .menu__brand {
+    .logo-default {
+      display: none;
+    }
+    .logo-white {
+      display: inline-block;
+    }
+  }
   .menu__link {
     display: flex;
     flex-direction: row;
@@ -55,6 +64,23 @@ header {
       height: 16px;
       border: 1px solid $light-primary;
       border-radius: 6px;
+    }
+  }
+
+  &.active {
+    background: $light-primary;
+    box-shadow: 0px 2px 5px rgba(3, 18, 26, 0.15);
+    .menu,
+    .menu__link {
+      color: $blue-primary;
+    }
+    .menu__brand {
+      .logo-default {
+        display: inline-block;
+      }
+      .logo-white {
+        display: none;
+      }
     }
   }
 }
