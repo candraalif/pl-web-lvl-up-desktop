@@ -8,6 +8,13 @@ header {
   background: linear-gradient(180deg, rgba(3, 18, 26, 0.325) 50%, rgba(3, 18, 26, 0) 100%);
   transition: all ease 0.2s;
 
+  .header-default {
+    display: inline-block;
+  }
+  .header-white {
+    display: none;
+  }
+
   .menu {
     color: $light-primary;
     width: 100%;
@@ -34,14 +41,6 @@ header {
     svg {
       width: 16px;
       height: 16px;
-    }
-  }
-  .menu__brand {
-    .logo-default {
-      display: none;
-    }
-    .logo-white {
-      display: inline-block;
     }
   }
   .menu__link {
@@ -74,13 +73,17 @@ header {
     .menu__link {
       color: $blue-primary;
     }
-    .menu__brand {
-      .logo-default {
-        display: inline-block;
-      }
-      .logo-white {
-        display: none;
-      }
+    .header-default {
+      display: none;
+    }
+    .header-white {
+      display: inline-block;
+    }
+    img.avatar {
+      border: 1px solid $blue-primary;
+    }
+    .btn.btn-outline {
+      border: 1px solid $blue-primary;
     }
   }
 }
