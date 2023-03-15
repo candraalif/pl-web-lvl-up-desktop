@@ -1,7 +1,7 @@
 extends ../layouts/master.pug
 
 block title
-  title Traveloka ID
+  title Traveloka
 
 block basicSeo
   meta(name='description' content='Blog page')
@@ -9,14 +9,20 @@ block basicSeo
   meta(name='author' content='')
 
 block content
-
-  -var pageTitle = 'Traveloka'
-  -var pageUrl = 'https://www.traveloka.com/id-id'
-
   // Menu
-  +menu('blog')
+  +menu('homepage')
 
-  //- BLog page
-  main.blog__page
+  //- Homepage
+  main.home__page__1
+    section.jumbotron
+      .bg-image
+        img.bg-image-item(src=require('images/image-bg-1.jpg'))
+        img.bg-image-item(src=require('images/image-bg-2.jpg'))
+        img.bg-image-item(src=require('images/image-bg-3.jpg'))
+        img.bg-image-item(src=require('images/image-bg-4.jpg'))
+      .bg-image-control-prev
+      .bg-image-control-next
+      .container.text-center
+        h1.slogan Southeast Asia's Leading Travel Platform
     img.mockup(src=require('images/mockup-without-header.png'), alt="mockup")
 

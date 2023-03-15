@@ -1,4 +1,16 @@
 //- src/views/components/footer.pug
 
-footer.footer
-  p Copyright © Traveloka. All rights reserved
+footer#footer
+  .container
+    .row
+      .col
+        img(src=require('images/footer-column-1.png'), alt="footer-column-1")
+      .col
+        img(src=require('images/footer-column-2.png'), alt="footer-column-2")
+      .col
+        img(src=require('images/footer-column-3.png'), alt="footer-column-3")
+      .col
+        img(src=require('images/footer-column-4.png'), alt="footer-column-4")
+  .copyright
+    .container.text-center
+      Copyright © 2023 Traveloka. All rights reserved

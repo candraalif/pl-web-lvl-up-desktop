@@ -1,5 +1,20 @@
 /* src/assets/styles/pages/_index.scss  */
 
-.home__page {
-
+.home__page__1 {
+  .jumbotron {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    color: $light-primary;
+    h1.slogan {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 48px;
+    }
+    .bg-image {
+      display: none;
+    }
+  }
 }

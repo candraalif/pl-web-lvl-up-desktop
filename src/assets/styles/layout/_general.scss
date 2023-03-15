@@ -28,6 +28,22 @@ img {
   padding-left: 24px;
   padding-right: 24px;
 }
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.col {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  flex: 1 0 0%;
+}
+
+.text-center {
+  text-align: center;
+}
 
 .icon-16 {
   width: 16px;
