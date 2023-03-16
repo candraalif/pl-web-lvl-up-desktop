@@ -1,8 +1,9 @@
 /* src/assets/styles/pages/_index.scss  */
 
 .home__page__1 {
+
   .jumbotron {
-    height: 70vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,6 +20,7 @@
       background: rgba(0,0,0,0.1);
       z-index: 2;
     }
+
     .bg-image {
       position: absolute;
       left: 0;
@@ -27,8 +29,9 @@
       height: 100%;
       background-color: $blue-dark;
       z-index: 2;
+      overflow: hidden;
       .bg-image-item {
-        transition: all 2s linear;
+        transition: all 1s linear;
         position: absolute;
         left: 0;
         top: 0;
@@ -38,8 +41,40 @@
         background-position: center center;
         background-repeat: no-repeat;
         opacity: 0;
+        &.active {
+          opacity: 1;
+          transform: scale(1.1);
+        }
       }
     }
+
+    .bg-image-control-prev,
+    .bg-image-control-next {
+      position: absolute;
+      width: 80px;
+      height: 100%;
+      z-index: 2;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+      }
+      svg {
+        width: 48px;
+        height: 48px;
+        path {
+          stroke: $light-primary;
+        }
+      }
+    }
+    .bg-image-control-prev {
+      left: 0;
+    }
+    .bg-image-control-next {
+      right: 0;
+    }
+
     h1.slogan {
       display: inline-block;
       font-weight: 500;

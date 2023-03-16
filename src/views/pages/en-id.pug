@@ -16,12 +16,14 @@ block content
   main.home__page__1
     section.jumbotron
       .bg-image
-        .bg-image-item(data-image-bg=require('images/image-bg-1.jpg'))
+        .bg-image-item.active(data-image-bg=require('images/image-bg-1.jpg'))
         .bg-image-item(data-image-bg=require('images/image-bg-2.jpg'))
         .bg-image-item(data-image-bg=require('images/image-bg-3.jpg'))
         .bg-image-item(data-image-bg=require('images/image-bg-4.jpg'))
       .bg-image-control-prev
+        +icon('ic-system-chevron-left')
       .bg-image-control-next
+        +icon('ic-system-chevron-right')
       .container.text-center
         h1.slogan Southeast Asia's Leading Travel Platform
     img.mockup(src=require('images/mockup-without-header.png'), alt="mockup")

@@ -15,14 +15,16 @@ $(document).on('ready', function(){
 	
   var i = 0;
 	var jumboImages = $('.jumbotron .bg-image .bg-image-item')
-	console.log(jumboImages[0])
 	// set initial background-image
-	jumboImages.eq(0).css('opacity', 1 )
+	jumboImages.eq(0).addClass('active')
 	// change image every after 5 seconds
   setInterval(function(){
-		jumboImages.css('opacity', 0 )
-    jumboImages.eq(i++).css('opacity', 1 )
+		jumboImages.removeClass('active')
+    jumboImages.eq(i++).addClass('active')
     if(i == jumboImages.length)
       i = 0
   }, 5000)
+	$('.bg-image-control-prev').on('click', function(){
+		//next
+	})
 })
