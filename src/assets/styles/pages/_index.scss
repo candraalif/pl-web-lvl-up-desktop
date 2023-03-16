@@ -2,19 +2,50 @@
 
 .home__page__1 {
   .jumbotron {
-    height: 50vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-size: cover;
     color: $light-primary;
+    position: relative;
+    &::before {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+    .bg-image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $blue-dark;
+      z-index: 2;
+      .bg-image-item {
+        transition: all 2s linear;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        opacity: 0;
+      }
+    }
     h1.slogan {
       display: inline-block;
       font-weight: 500;
       font-size: 48px;
-    }
-    .bg-image {
-      display: none;
+      position: relative;
+      z-index: 3;
     }
   }
 }

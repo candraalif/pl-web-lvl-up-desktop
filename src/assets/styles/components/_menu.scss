@@ -33,7 +33,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 16px;
+    gap: 4px;
   }
   .menu__item {
     list-style: none;
@@ -49,14 +49,15 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 4px;
+    border-radius: 6px;
+    padding: 8px;
     color: $light-primary;
-    border-bottom: 2px solid transparent;
     font-size: 15px;
     &:hover,
     &.active {
-      border-color: $light-primary;
       text-decoration: none;
       outline: 0;
+      background-color: rgba(0,0,0,0.1);
     }
     img.avatar {
       width: 16px;
