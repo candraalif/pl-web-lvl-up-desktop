@@ -12,19 +12,31 @@ $(document).on('ready', function(){
 		let bg = $(this).data('image-bg')
 		$(this).css('background-image', 'url('+bg+')')
 	})
-	
-  var i = 0;
-	var jumboImages = $('.jumbotron .bg-image .bg-image-item')
-	// set initial background-image
-	jumboImages.eq(0).addClass('active')
-	// change image every after 5 seconds
-  setInterval(function(){
-		jumboImages.removeClass('active')
-    jumboImages.eq(i++).addClass('active')
-    if(i == jumboImages.length)
-      i = 0
-  }, 5000)
-	$('.bg-image-control-prev').on('click', function(){
-		//next
+	// Run Image Slider
+	function nextBgImage(){
+		var items = $('.jumbotron .bg-image .bg-image-item')
+		var activeItem = $('.jumbotron .bg-image .bg-image-item.active')
+		var nextItem = activeItem.next()
+		if(activeItem.is(':last-child'))
+			var nextItem = items.eq(0)
+		activeItem.removeClass('active')
+		nextItem.addClass('active')
+	}
+	function prevBgImage(){
+		var items = $('.jumbotron .bg-image .bg-image-item')
+		var activeItem = $('.jumbotron .bg-image .bg-image-item.active')
+		var prevItem = activeItem.prev()
+		if(activeItem.is(':first-child'))
+			var prevItem = items.last()
+		activeItem.removeClass('active')
+		prevItem.addClass('active')
+	}
+	// Set Image Change Interval (in milisecond, 10000 = 10s)
+	setInterval(function(){ nextBgImage() }, 10000)
+  $('.bg-image-control-prev').on('click', function(){
+		prevBgImage()
+	})
+	$('.bg-image-control-next').on('click', function(){
+		nextBgImage()
 	})
 })
