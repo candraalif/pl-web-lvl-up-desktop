@@ -5,6 +5,7 @@ $(window).on('scroll', function (){
 	} else {
 		$('#header').removeClass('active')
 	}
+	$('.bg-image').css('top', windowpos/1.5 );
 });
 
 
@@ -38,4 +39,18 @@ $('.bg-image-control-prev').on('click', function(){
 })
 $('.bg-image-control-next').on('click', function(){
 	nextBgImage()
+})
+
+$('.product-form-tab').each(function(){
+	var tab = $(this)
+	var nav = $(this).find('.product-form-tab-nav-item')
+	nav.each(function(){
+		$(this).on('click', function(){
+			nav.removeClass('active')
+			$(this).addClass('active')
+			var id = $(this).data('id')
+			tab.find('.product-form-tab-content-item').removeClass('active')
+			tab.find('.product-form-tab-content-item[data-id='+id+']').addClass('active')
+		})
+	})
 })

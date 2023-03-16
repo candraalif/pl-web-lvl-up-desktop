@@ -1,0 +1,75 @@
+.product-form-tab {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  // color: $dark-stain;
+  // background: $light-primary;
+
+  .product-form-tab-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 16px 0 16px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid $light-secondary;
+    transition: all ease 0.2s;
+    .product-form-tab-nav-item {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 12px 24px;
+      align-items: center;
+      font-weight: 500;
+      font-size: 16px;
+      color: $light-primary;
+      opacity: 0.75;
+      gap: 4px;
+      position: relative;
+      overflow: hidden;
+      svg path {
+        fill: $light-primary;
+      }
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 8px;
+        background: $light-primary;
+        border-radius: 8px;
+        transition: all ease 0.2s;
+      }
+      &.active,
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        opacity: 1;
+        &::before {
+          bottom: -4px;
+        }
+      }
+      &.active {
+        svg path {
+          fill: $tv-lime-green;
+        }
+      }
+    }
+  }
+
+  .product-form-tab-content {
+    .product-form-tab-content-item {
+      padding: 16px;
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
