@@ -54,3 +54,17 @@ $('.product-form-tab').each(function(){
 		})
 	})
 })
+
+$('.invisible-tab').each(function(){
+	var tab = $(this)
+	var nav = $(this).find('.invisible-tab-nav-item')
+	nav.each(function(){
+		$(this).on('click', function(){
+			nav.removeClass('active')
+			$(this).addClass('active')
+			var id = $(this).data('id')
+			tab.find('.invisible-tab-content-item').removeClass('active')
+			tab.find('.invisible-tab-content-item[data-id='+id+']').addClass('active')
+		})
+	})
+})

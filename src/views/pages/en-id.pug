@@ -62,7 +62,29 @@ block content
                 | More
             .product-form-tab-content
               .product-form-tab-content-item.active(data-id='hotel')
-                p Content Hotel
+                .invisible-tab
+                  .invisible-tab-nav
+                    button.btn.btn-primary.btn-small.btn-rounded.invisible-tab-nav-item.active(data-id='1')
+                      +icon('ic-product-hotel-fill')
+                      | Hotels
+                    button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='2')
+                      +icon('ic-product-holiday-stays')
+                      | Holiday Stays
+                    button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='3')
+                      +icon('ic-product-holiday-stays')
+                      | Villas
+                    button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='4')
+                      +icon('ic-product-holiday-stays')
+                      | Apartments
+                  .invisible-tab-content
+                    .invisible-tab-content-item.active(data-id='1')
+                      .product-form-container Hotels Form
+                    .invisible-tab-content-item(data-id='2')
+                      .product-form-container Holiday Stays Form
+                    .invisible-tab-content-item(data-id='3')
+                      .product-form-container Villas Form
+                    .invisible-tab-content-item(data-id='4')
+                      .product-form-container Apartments Form
               .product-form-tab-content-item(data-id='flight')
                 p Content Flight
               .product-form-tab-content-item(data-id='train')

@@ -15,7 +15,7 @@
   @extend .clean-button;
   font-family: $defaultfont;
   border-radius: 6px;
-  color: white;
+  color: $light-primary;
   padding: 16px 40px;
   background: $blue-primary;
   transition: all ease 0.2s;
@@ -24,6 +24,7 @@
   &:hover,
   &:focus {
     background: $blue-secondary;
+    cursor: pointer;
   }
   &.btn-block {
     display: block;
@@ -40,5 +41,13 @@
   &.btn-outline {
     background: transparent;
     border: 1px solid $light-primary;
+  }
+
+  &.btn-rounded {
+    border-radius: 100px;
+  }
+
+  &.btn-dark-transparent {
+    background: rgba(3, 18, 26, 0.5);
   }
 }
