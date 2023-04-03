@@ -3,6 +3,7 @@ mixin menu(currentPage)
     .container
       nav.menu
         a.menu__brand(href='/')
+          img.header-default.brand-background(src=require('images/brand-ornament.svg'))
           img.header-default(src=require('images/traveloka-logo-white.png'), alt="Traveloka", title="Traveloka", class="image")
           img.header-white(src=require('images/traveloka-logo.png'), alt="Traveloka", title="Traveloka", class="image")
         ul.menu__ul
@@ -33,10 +34,6 @@ mixin menu(currentPage)
                 <path d="M6 9L12 15L18 9" stroke="#0194f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
           li.menu__item
-            a.menu__link(href='#', class=currentPage === 'partner' ? 'active' : '') Partner
-          li.menu__item
-            a.menu__link(href='#', class=currentPage === 'support' ? 'active' : '') Support
-          li.menu__item
             a.menu__link(href='#', class=currentPage === 'deals' ? 'active' : '')
               <svg class="icon-16 header-default" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 16L14 8C14 8 13 9 11.5 9C10 9 8.5 8 8.5 8M7 9.5V9.5C7 10.3284 7.67157 11 8.5 11V11C9.32843 11 10 10.3284 10 9.5V9.5C10 8.67157 9.32843 8 8.5 8V8C7.67157 8 7 8.67157 7 9.5ZM17 14.5V14.5C17 15.3284 16.3284 16 15.5 16V16C14.6716 16 14 15.3284 14 14.5V14.5C14 13.6716 14.6716 13 15.5 13V13C16.3284 13 17 13.6716 17 14.5Z" stroke="#91EC00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -47,6 +44,12 @@ mixin menu(currentPage)
                 <path d="M3.26137 7C2.56473 7 2 7.56473 2 8.26137V15.7386C2 16.4353 2.56473 17 3.26137 17V17C3.69547 17 4.07386 17.2954 4.17915 17.7166L4.31063 18.2425C4.42193 18.6877 4.82191 19 5.28078 19H18.7192C19.1781 19 19.5781 18.6877 19.6894 18.2425L19.8209 17.7166C19.9261 17.2954 20.3045 17 20.7386 17V17C21.4353 17 22 16.4353 22 15.7386V8.26137C22 7.56473 21.4353 7 20.7386 7V7C20.3045 7 19.9261 6.70456 19.8209 6.28342L19.6894 5.75746C19.5781 5.3123 19.1781 5 18.7192 5H5.28078C4.82191 5 4.42193 5.3123 4.31063 5.75746L4.17914 6.28342C4.07386 6.70456 3.69547 7 3.26137 7V7Z" stroke="#0194f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               | Deals
+          li.menu__item
+            a.menu__link(href='#', class=currentPage === 'support' ? 'active' : '') Support
+          li.menu__item
+            a.menu__link(href='#', class=currentPage === 'partner' ? 'active' : '') Partner
+          li.menu__item
+            a.menu__link(href='#', class=currentPage === 'saved' ? 'active' : '') Saved
           li.menu__item
             a.menu__link(href='#', class=currentPage === 'booking' ? 'active' : '') Booking
           li.menu__item

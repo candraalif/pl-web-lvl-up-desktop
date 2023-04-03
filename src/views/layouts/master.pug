@@ -39,7 +39,6 @@ html(lang='en')
       meta(property='og:image', content='')
       meta(property='og:type', content='website')
 
-
     //- Favicons
     link(rel='apple-touch-icon', sizes='180x180', href=require('images/favicons/apple-touch-icon.png'))
     link(rel='shortcut icon', href=require('images/favicons/favicon.ico'))
@@ -50,7 +49,7 @@ html(lang='en')
     link(type='font/woff', href=require('source/assets/fonts/GodwitText-Regular.ttf'), rel='preload', as='font', crossorigin)
     link(type='font/woff', href=require('source/assets/fonts/GodwitText-Light.ttf'), rel='preload', as='font', crossorigin)
 
-    <!-- Hotjar Tracking Code for my site -->
+    //- Hotjar Tracking Code for my site
     script.
       (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -63,18 +62,17 @@ html(lang='en')
 
   body
 
-      //- Mixins
-      include ../mixins/icons.pug
+    //- Mixins
+    include ../mixins/icons.pug
 
-      //- Menu
-      include ../components/header.pug
+    //- Menu
+    include ../components/header.pug
 
-      //- block content
-      block content
+    //- block content
+    block content
 
-      //- Footer
-      include ../components/footer.pug
+    //- Footer
+    include ../components/footer.pug
 
-      //- block scripts
-      block scripts
-
+    //- block scripts
+    block scripts

@@ -1,3 +1,5 @@
+import 'slick-carousel'
+
 $(window).on('scroll', function (){
 	var windowpos = $(window).scrollTop()
 	if( windowpos >= 80 ) {
@@ -68,3 +70,20 @@ $('.invisible-tab').each(function(){
 		})
 	})
 })
+
+$('.btn-scroll-down').on('click', function(){
+	var windowheight = $(window).height()
+	var headerheight = $('#header').height()
+	var scrollto = windowheight - headerheight
+	console.log('scrollto: '+scrollto)
+	$('html, body').animate({
+		scrollTop: scrollto
+	})
+})
+
+// Carousel
+$('.carousel').slick({
+  infinite: false,
+	swipe: false,
+  slidesToShow: 4
+});

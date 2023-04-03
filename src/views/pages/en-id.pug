@@ -16,37 +16,40 @@ block content
   main.home__page__1
     section.jumbotron
       .bg-image
-        .bg-image-item.active(data-image-bg=require('images/image-bg-1.jpg'))
-        .bg-image-item(data-image-bg=require('images/image-bg-2.jpg'))
-        .bg-image-item(data-image-bg=require('images/image-bg-3.jpg'))
-        .bg-image-item(data-image-bg=require('images/image-bg-4.jpg'))
+        .bg-image-item.active(data-image-bg=require('images/image-bg-lyw-1.jpg'))
+        .bg-image-item(data-image-bg=require('images/image-bg-lyw-2.jpg'))
+        .bg-image-item(data-image-bg=require('images/image-bg-lyw-3.jpg'))
+        //- .bg-image-item(data-image-bg=require('images/image-bg-4.jpg'))
       .bg-image-control-prev
         +icon('ic-system-chevron-left')
       .bg-image-control-next
         +icon('ic-system-chevron-right')
-      .jumbotron-content.container
+      .jumbotron-content
         h1.slogan Southeast Asia's<br />Leading Travel Platform
         .product-form
           .product-form-tab
             .product-form-tab-nav
               .product-form-tab-nav-item.active(data-id='hotel')
                 +icon('ic-product-hotel-fill')
-                | Hotel
+                | Hotels
               .product-form-tab-nav-item(data-id='flight')
                 +icon('ic-product-flight-fill')
-                | Flight
+                | Flights
               .product-form-tab-nav-item(data-id='train')
                 +icon('ic-product-train-fill')
-                | Train
+                | Trains
               .product-form-tab-nav-item(data-id='bus-shuttle')
                 +icon('ic-product-bus-fill')
                 | Bus &amp; Shuttle
-              .product-form-tab-nav-item(data-id='airport-transfer-car')
+              .product-form-tab-nav-item(data-id='airport-transfer')
                 +icon('ic-product-bus-airport-transfer')
-                | Airport Transfer &amp; Car
+                | Airport Transfer
+              .product-form-tab-nav-item(data-id='car')
+                +icon('ic-product-car-rental-fill')
+                | Cars
               .product-form-tab-nav-item(data-id='experience')
                 +icon('ic-product-xperience-fill')
-                | Experience
+                | Experiences
               .product-form-tab-nav-item(data-id='more')
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4 18.5C4 18.2239 4.22386 18 4.5 18H5.5C5.77614 18 6 18.2239 6 18.5V19.5C6 19.7761 5.77614 20 5.5 20H4.5C4.22386 20 4 19.7761 4 19.5V18.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -64,7 +67,7 @@ block content
               .product-form-tab-content-item.active(data-id='hotel')
                 .invisible-tab
                   .invisible-tab-nav
-                    button.btn.btn-primary.btn-small.btn-rounded.invisible-tab-nav-item.active(data-id='1')
+                    button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item.active(data-id='1')
                       +icon('ic-product-hotel-fill')
                       | Hotels
                     button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='2')
@@ -85,6 +88,8 @@ block content
                       .product-form-container Villas Form
                     .invisible-tab-content-item(data-id='4')
                       .product-form-container Apartments Form
+                .trusted-partners
+                  i Trusted by
               .product-form-tab-content-item(data-id='flight')
                 p Content Flight
               .product-form-tab-content-item(data-id='train')
@@ -95,5 +100,87 @@ block content
                 p Content Airport Transfer &amp; Car
               .product-form-tab-content-item(data-id='experience')
                 p Content Experience
+      .btn-scroll-down
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 7L12 10L15 7M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        | Find what inspires you
+    section.latest-search
+      .container
+        +icon('ic-system-arrow-right')
+        h3 Continue your search
+    section.shoutheast-asia.merchandising
+      .container
+        .merch-title
+          <svg class="icon-24 header-white" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 16L14 8C14 8 13 9 11.5 9C10 9 8.5 8 8.5 8M7 9.5V9.5C7 10.3284 7.67157 11 8.5 11V11C9.32843 11 10 10.3284 10 9.5V9.5C10 8.67157 9.32843 8 8.5 8V8C7.67157 8 7 8.67157 7 9.5ZM17 14.5V14.5C17 15.3284 16.3284 16 15.5 16V16C14.6716 16 14 15.3284 14 14.5V14.5C14 13.6716 14.6716 13 15.5 13V13C16.3284 13 17 13.6716 17 14.5Z" stroke="#91EC00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.26137 7C2.56473 7 2 7.56473 2 8.26137V15.7386C2 16.4353 2.56473 17 3.26137 17V17C3.69547 17 4.07386 17.2954 4.17915 17.7166L4.31063 18.2425C4.42193 18.6877 4.82191 19 5.28078 19H18.7192C19.1781 19 19.5781 18.6877 19.6894 18.2425L19.8209 17.7166C19.9261 17.2954 20.3045 17 20.7386 17V17C21.4353 17 22 16.4353 22 15.7386V8.26137C22 7.56473 21.4353 7 20.7386 7V7C20.3045 7 19.9261 6.70456 19.8209 6.28342L19.6894 5.75746C19.5781 5.3123 19.1781 5 18.7192 5H5.28078C4.82191 5 4.42193 5.3123 4.31063 5.75746L4.17914 6.28342C4.07386 6.70456 3.69547 7 3.26137 7V7Z" stroke="#0194f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          h3 Best deals for a price-less travel!
+    section.shoutheast-asia.merchandising
+      .container
+        .merch-title
+          h3 The heart of Southeast Asia awaits you
+        .merch-content
+          .row
+            .col
+              a.image-link.merch-content-item.ratio-1-by-2(href='#')
+                img(src=require('images/card-merchandising-sea-5.png'))
+            .col
+              a.image-link.merch-content-item.ratio-1-by-2(href='#')
+                img(src=require('images/card-merchandising-sea-1.png'))
+          .row
+            .col
+              a.image-link.merch-content-item.ratio-3-by-4(href='#')
+                img(src=require('images/card-merchandising-sea-2.png'))
+            .col
+              a.image-link.merch-content-item.ratio-3-by-4(href='#')
+                img(src=require('images/card-merchandising-sea-3.png'))
+            .col
+              a.image-link.merch-content-item.ratio-3-by-4(href='#')
+                img(src=require('images/card-merchandising-sea-4.png'))
+    section.flight-inspiration.merchandising
+      .container
+        .merch-title
+          +icon('ic-product-flight')
+          h3 Your next getaway? A flight away!
+        .merch-content.carousel
+          div
+            a(href='#')
+              img(src=require('images/card-merchandising-flight-1.png'))
+          div
+            a(href='#')
+              img(src=require('images/card-merchandising-flight-2.png'))
+          div
+            a(href='#')
+              img(src=require('images/card-merchandising-flight-3.png'))
+          div
+            a(href='#')
+              img(src=require('images/card-merchandising-flight-4.png'))
+          div
+            a(href='#')
+              img(src=require('images/card-merchandising-flight-1.png'))
+          div
+            a(href='#')
+              img(src=require('images/card-merchandising-flight-2.png'))
+    section.hotel-inspiration.merchandising
+      .container
+        .merch-title
+          +icon('ic-product-hotel')
+          h3 Rest in style: featured stays
+        .merch-content
+          .row
+            .col
+              a.image-link.merch-card(href='#')
+                img(src=require('images/card-merchandising-hotel-1.png'))
+            .col
+              a.image-link.merch-card(href='#')
+                img(src=require('images/card-merchandising-hotel-2.png'))
+            .col
+              a.image-link.merch-card(href='#')
+                img(src=require('images/card-merchandising-hotel-3.png'))
+            .col
+              a.image-link.merch-card(href='#')
+                img(src=require('images/card-merchandising-hotel-4.png'))
     //- img.mockup(src=require('images/mockup-without-header.png'), alt="mockup")
 

@@ -12,7 +12,8 @@
   .product-form-tab-nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 4px;
     padding: 8px 16px 0 16px;
     width: 100%;
     box-sizing: border-box;
@@ -23,14 +24,17 @@
     .product-form-tab-nav-item {
       display: flex;
       flex-direction: row;
-      flex-wrap: nowrap;
-      padding: 12px 24px;
+      flex-wrap: wrap;
+      padding: 8px 16px;
       align-items: center;
-      font-weight: 500;
+      align-content: flex-start;
+      justify-content: center;
+      text-align: center;
+      font-weight: $boldfontweight;
       font-size: 16px;
       color: $light-primary;
       opacity: 0.75;
-      gap: 4px;
+      gap: 8px;
       position: relative;
       overflow: hidden;
       svg path {
@@ -70,6 +74,7 @@
       padding: 16px;
       display: none;
       &.active {
+        animation: tabcontent 0.2s ease-in;
         display: block;
       }
     }
@@ -87,6 +92,7 @@
   .invisible-tab-nav {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 8px;
     padding: 8px 16px 0 16px;
     width: 100%;
@@ -102,6 +108,9 @@
       svg path {
         fill: $light-primary;
       }
+      &.active {
+        background-color: $blue-primary;
+      }
     }
   }
   .invisible-tab-content {
@@ -115,11 +124,29 @@
   }
 }
 
+@keyframes tabcontent {
+  from {
+    transform: translateX(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .product-form-container {
   display: block;
   padding: 16px;
   background-color: $light-primary;
-  outline: 4px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   color: $dark-stain;
+}
+
+.trusted-partners {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }

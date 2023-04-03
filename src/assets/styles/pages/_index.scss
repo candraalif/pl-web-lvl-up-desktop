@@ -89,15 +89,62 @@
     .jumbotron-content {
       position: relative;
       z-index: 5;
-      min-height: 500px;
+      width: 80%;
+      max-width: 1280px;
+      // min-height: 500px;
+      // margin-top: 120px;
     }
 
     h1.slogan {
       display: inline-block;
-      font-weight: 500;
+      font-weight: $boldfontweight;
       font-size: 48px;
       margin-top: 0;
-      margin-bottom: 80px;
+      margin-bottom: 6vh;
+    }
+
+    .btn-scroll-down {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid $light-primary;
+      padding: 8px 16px;
+      border-radius: 24px;
+      background: rgba(3, 18, 26, 0.25);
+      color: $light-primary;
+      font-weight: $boldfontweight;
+      transition: all ease 0.2s;
+      svg {
+        animation: arrowdown 0.75s infinite;
+      }
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        background: $light-primary;
+        color: $dark-primary;
+        svg > path {
+          stroke: $dark-primary;
+        }
+      }
     }
   }
+}
+
+@keyframes arrowdown {
+  from {
+    transform: translateY(-2px);
+  }
+  to {
+    transform: translateY(2px);
+  }
+}
+
+.latest-search {
+  background: $light-stain;
 }

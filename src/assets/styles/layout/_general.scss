@@ -1,10 +1,12 @@
 /* src/assets/styles/layout/_general.scss  */
+$corner-radius: 6px;
 
 * {
   box-sizing: border-box;
   outline: none;
   font-family: $defaultfont;
   font-weight: $defaultfontweight;
+  line-height: 1.5;
 }
 
 body {
@@ -15,7 +17,12 @@ body {
 
 strong,
 b {
-  font-weight: 500;
+  font-weight: $boldfontweight;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $boldfontweight;
+  line-height: 1.25;
 }
 
 a {
@@ -58,4 +65,83 @@ img {
 .icon-24 {
   width: 24px;
   height: 24px;
+}
+
+.padding-8 { padding: 8px; }
+.padding-16 { padding: 8px; }
+
+.merchandising {
+  margin-bottom: 48px;
+  .merch-title {
+    display: flex;
+    flex-direction: row;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 36px;
+    margin-bottom: 24px;
+    h3 {
+      margin: 0;
+      font-size: 32px;
+    }
+  }
+  .merch-content {
+    .row {
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .merch-card {
+      display: block;
+      position: relative;
+      width: 100%;
+      img {
+        display: block;
+      }
+    }
+    .merch-content-item {
+      display: block;
+      position: relative;
+      border-radius: $corner-radius;
+      overflow: hidden;
+      width: 100%;
+      &.ratio-1-by-2 {
+        padding-top: 50%;
+      }
+      &.ratio-3-by-4 {
+        padding-top: 66.67%
+      }
+      img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+      .text-overlay-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(3, 18, 26, 0.5) 0%, rgba(3, 18, 26, 0) 56.67%);
+        color: $light-primary;
+        padding: 16px;
+        z-index: 2;
+      }
+      .text-overlay-title {
+        font-weight: $boldfontweight;
+        font-size: 32px;
+      }
+      .text-overlay-description {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+img.fit {
+  object-fit: cover;
 }

@@ -18,13 +18,23 @@ header {
   .menu {
     color: $light-primary;
     width: 100%;
-    padding: 15px;
+    padding: 16px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     .image {
       width: 160px;
+    }
+  }
+  .menu__brand {
+    position: relative;
+    .brand-background {
+      position: absolute;
+      top: -32px;
+      left: 25%;
+      z-index: -10;
+      transform: scale(4);
     }
   }
   .menu__ul {
@@ -72,7 +82,7 @@ header {
     box-shadow: 0px 2px 5px rgba(3, 18, 26, 0.15);
     .menu,
     .menu__link {
-      color: $blue-primary;
+      color: $dark-primary;
     }
     .header-default {
       display: none;
