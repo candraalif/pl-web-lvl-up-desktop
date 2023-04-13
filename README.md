@@ -9,6 +9,11 @@ Webpack project starter with Pug, Sass/Stylus, jQuery, VanillaJS, Babel and Yarn
 - Scripting: `jQuery or VanillaJS(plain Javascript)`
 - JS Compiler: `Babel ES6 ES7 ES8 ES9 ES10 ES11 ES12` (that means you can use async/await, replaceAll, optional chaining... among many others)
 
+## Initial Run
+```
+yarn
+```
+
 ## Run dev server in a different port
 ```
 yarn dev --port your_port_number
