@@ -23,10 +23,7 @@ mixin menu(currentPage)
                   <path stroke="#0194f3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12,22 C15.0375661,22 17.5,17.5228475 17.5,12 C17.5,6.4771525 15.0375661,2 12,2 C8.96243388,2 6.5,6.4771525 6.5,12 C6.5,17.5228475 8.96243388,22 12,22 Z M12,22 L12,2 M22,12 L2,12"></path>
                 </g>
               </svg>
-              | EN
-          li.menu__item
-            a.menu__link(href='#')
-              | IDR
+              | EN | IDR
               <svg class="header-default" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 9L12 15L18 9" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
@@ -47,11 +44,9 @@ mixin menu(currentPage)
           li.menu__item
             a.menu__link(href='#', class=currentPage === 'support' ? 'active' : '') Support
           li.menu__item
-            a.menu__link(href='#', class=currentPage === 'partner' ? 'active' : '') Partner
+            a.menu__link(href='#', class=currentPage === 'partner' ? 'active' : '') Partnership
           li.menu__item
-            a.menu__link(href='#', class=currentPage === 'saved' ? 'active' : '') Saved
-          li.menu__item
-            a.menu__link(href='#', class=currentPage === 'booking' ? 'active' : '') Booking
+            a.menu__link(href='#', class=currentPage === 'booking' ? 'active' : '') Bookings
           li.menu__item
             a.menu__link.btn.btn-outline.btn-small(href='#', class=currentPage === 'userProfile' ? 'active' : '')
               img.avatar(src=require('images/user-avatar.png'), alt="User Avatar")

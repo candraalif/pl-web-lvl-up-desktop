@@ -136,17 +136,52 @@
 }
 
 .product-form-container {
-  display: block;
-  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   background-color: $light-primary;
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   color: $dark-stain;
+  & + & {
+    margin-top: 16px;
+  }
+  button {
+    width: 320px;
+    padding: 16px !important;
+  }
+  .product-form-input {
+    &.border-right {
+      border-right: 1px solid $light-secondary;
+    }
+    width: 100%;
+    input {
+      border-radius: 10px;
+      border: 0;
+      width: 100%;
+      padding: 16px;
+      font-size: 16px;
+    }
+  }
 }
 
-.trusted-partners {
+.trusted-partners,
+.life-your-way {
   padding: 16px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  img {
+    height: 40px;
+  }
+}
+.life-your-way {
+  align-items: flex-start;
+  img {
+    height: 32px;
+  }
 }

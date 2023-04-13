@@ -1,11 +1,21 @@
 $carousel-gap: 8px;
 
 .carousel {
+  .merch-item {
+    display: none;
+    .active {
+      display: block;
+    }
+  }
   .slick-slide {
     margin: 0 $carousel-gap;
   }
   .slick-list {
       margin: 0 (-$carousel-gap);
+  }
+  .slick-track {
+    margin-left: 0;
+    margin-right: 0;
   }
   .slick-disabled {
     display: none !important;
@@ -26,7 +36,11 @@ $carousel-gap: 8px;
     padding: 16px;
     border-radius: 64px;
     z-index: 2;
-    box-shadow: 0px 4px 8px rgba(3, 18, 26, 0.15);
+    transition: all ease 0.2s;
+    box-shadow: 0px 4px 10px rgba(3, 18, 26, 0.15);
+    &:hover {
+      box-shadow: 0px 8px 16px rgba(3, 18, 26, 0.2);
+    }
     &:before {
       display: block;
       width: 16px;

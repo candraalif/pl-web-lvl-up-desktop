@@ -2,15 +2,37 @@
 
 #footer {
   margin-top: 40px;
-  color: $dark-secondary;
+  color: $light-primary;
+  background: $dark-stain;
   width: 100%;
   padding: 10px;
-  text-align: center;
   font-weight: $boldfontweight;
   a {
     font-family: inherit;
     font-weight: bold;
     color: inherit;
+    display: block;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      color: $light-secondary;
+      margin-bottom: 8px;
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      svg {
+        filter: saturate(0);
+      }
+    }
+  }
+  .footer-content {
+    padding: 16px;
+  }
+  img {
+    max-width: 100%;
   }
 
   .copyright {

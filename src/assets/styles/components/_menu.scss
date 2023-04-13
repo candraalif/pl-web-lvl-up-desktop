@@ -30,11 +30,15 @@ header {
   .menu__brand {
     position: relative;
     .brand-background {
+      display: block;
       position: absolute;
       top: -32px;
       left: 25%;
       z-index: -10;
       transform: scale(4);
+      &.hide {
+        display: none;
+      }
     }
   }
   .menu__ul {

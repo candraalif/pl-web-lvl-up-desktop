@@ -21,6 +21,30 @@
   transition: all ease 0.2s;
   gap: 8px;
 
+  &.btn-orange {
+    background: $orange-primary;
+    color: $light-primary;
+    svg path {
+      stroke: $light-primary;
+    }
+    &:hover,
+    &:focus {
+      background: $orange-secondary;
+    }
+  }
+  &.btn-secondary {
+    background: $light-stain;
+    color: $blue-primary;
+    &:hover,
+    &:focus {
+      background: $light-neutral;
+    }
+  }
+
+  &.btn-pills {
+    border-radius: 120px;
+  }
+
   &:hover,
   &:focus {
     background: $blue-secondary;
