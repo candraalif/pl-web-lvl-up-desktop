@@ -57,6 +57,10 @@ img {
   text-align: center;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .icon-16 {
   width: 16px;
   height: 16px;
@@ -101,6 +105,16 @@ img {
       flex-direction: row;
       gap: 8px;
     }
+    .merch-item {
+      box-shadow: 0px 1px 2px rgba(3, 18, 26, 0.2);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: all ease 0.2s;
+      &:hover,
+      &:focus {
+        box-shadow: 0px 2px 5px rgba(3, 18, 26, 0.15);
+      }
+    }
     .merch-card {
       display: block;
       position: relative;
@@ -108,6 +122,11 @@ img {
       box-shadow: 0px 1px 2px rgba(3, 18, 26, 0.2);
       border-radius: 6px;
       overflow: hidden;
+      transition: all ease 0.2s;
+      &:hover,
+      &:focus {
+        box-shadow: 0px 2px 5px rgba(3, 18, 26, 0.15);
+      }
       img {
         display: block;
       }

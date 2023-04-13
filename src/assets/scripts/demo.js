@@ -11,7 +11,7 @@ $(window).on('scroll', function (){
 	$('.bg-image').css('top', windowpos/1.5 );
 });
 
-
+// Jumbotron Background Image Slider
 $('.jumbotron .bg-image .bg-image-item').each(function() {
 	let bg = $(this).data('image-bg')
 	$(this).css('background-image', 'url('+bg+')')
@@ -44,6 +44,7 @@ $('.bg-image-control-next').on('click', function(){
 	nextBgImage()
 })
 
+// Search Form Focus Mode
 function formOnFocus(){
 	$('.jumbotron').addClass('focus')
 	$('html, body').animate({
@@ -55,7 +56,6 @@ function formOnBlur(){
 	$('.jumbotron').removeClass('focus')
 	$('.brand-background').removeClass('hide')
 }
-
 $('.product-form-tab').each(function(){
 	var tab = $(this)
 	var nav = $(this).find('.product-form-tab-nav-item')
@@ -70,15 +70,14 @@ $('.product-form-tab').each(function(){
 		})
 	})
 })
-
 $('.product-form-input input').on('focus', function(){
 	formOnFocus()
 })
-
 $('.jumbotron-overlay').on('click', function(){
 	formOnBlur()
 })
 
+// Search Form Pills Tab
 $('.invisible-tab').each(function(){
 	var tab = $(this)
 	var nav = $(this).find('.invisible-tab-nav-item')
@@ -93,6 +92,7 @@ $('.invisible-tab').each(function(){
 	})
 })
 
+// Scroll Down
 $('.btn-scroll-down').on('click', function(){
 	var windowheight = $(window).height()
 	var headerheight = $('#header').height()
@@ -105,9 +105,12 @@ $('.btn-scroll-down').on('click', function(){
 
 // Carousel
 $('.carousel').each(function(){
+	var slideShown = $(this).data('shown')
+	if (!slideShown)
+		slideShown = 4
 	$(this).slick({
 		infinite: false,
-		slidesToShow: 4
+		slidesToShow: slideShown
 	});
 })
 $('.merch-filterable').each(function(){

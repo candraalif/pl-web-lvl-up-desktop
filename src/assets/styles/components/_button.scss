@@ -21,6 +21,10 @@
   transition: all ease 0.2s;
   gap: 8px;
 
+  &.btn-inline-block {
+    display: inline-block;
+  }
+
   &.btn-orange {
     background: $orange-primary;
     color: $light-primary;
