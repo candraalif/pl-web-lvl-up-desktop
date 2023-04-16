@@ -80,7 +80,13 @@ header {
       border-radius: 6px;
     }
   }
-
+  .language-country-flag {
+    display: none;
+    &.active {
+      display: flex;
+      align-items: center;
+    }
+  }
   &.active {
     background: $light-primary;
     box-shadow: 0px 2px 5px rgba(3, 18, 26, 0.15);
