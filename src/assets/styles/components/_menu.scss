@@ -5,6 +5,24 @@ header {
   left: 0;
   width: 100%;
   z-index: 10;
+}
+
+#top-banner {
+  display: block;
+  padding: 8px;
+  color: $light-primary;
+  text-align: center;
+  background: url('/assets/images/top-banner-ornament.png') top center, linear-gradient(165deg, #0A9AF2 19.84%, #0369BD 92.08%);
+  background-repeat: no-repeat;
+  background-size: contain, cover;
+  img {
+    display: block;
+    height: 24px;
+    margin: auto;
+  }
+}
+
+#header {
   background: linear-gradient(180deg, rgba(3, 18, 26, 0.325) 50%, rgba(3, 18, 26, 0) 100%);
   transition: all ease 0.2s;
 

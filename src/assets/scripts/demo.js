@@ -61,12 +61,17 @@ $('.product-form-tab').each(function(){
 	var nav = $(this).find('.product-form-tab-nav-item')
 	nav.each(function(){
 		$(this).on('click', function(){
-			// formOnFocus()
-			nav.removeClass('active')
-			$(this).addClass('active')
-			var id = $(this).data('id')
-			tab.find('.product-form-tab-content-item').removeClass('active')
-			tab.find('.product-form-tab-content-item[data-id='+id+']').addClass('active')
+			var isTab = $(this).data('tab')
+			if(isTab != false) {
+				// formOnFocus()
+				nav.removeClass('active')
+				$(this).addClass('active')
+				var id = $(this).data('id')
+				tab.find('.product-form-tab-content-item').removeClass('active')
+				tab.find('.product-form-tab-content-item[data-id='+id+']').addClass('active')
+			} else {
+				// Nothing
+			}
 		})
 	})
 })
@@ -95,7 +100,7 @@ $('.invisible-tab').each(function(){
 // Scroll Down
 $('.btn-scroll-down').on('click', function(){
 	var jumbotronheight = $('.jumbotron').outerHeight()
-	var headerheight = $('#header').outerHeight()
+	var headerheight = $('header').outerHeight()
 	var scrollto = jumbotronheight - headerheight
 	// console.log('scrollto: '+scrollto)
 	$('html, body').animate({
@@ -152,6 +157,42 @@ $('.m-tab').each(function(){
 			tab.find('.m-tab-content-item[data-id='+id+']').addClass('active')
 		})
 	})
+})
+
+// Modal
+var modalTrigger = $('[data-trigger=modal]')
+function openModal(id) {
+	var modal = $('.modal[data-modal='+id+']')
+	modal.addClass('active')
+	$('body').css('overflow', 'hidden')
+}
+function closeModal(id) {
+	var modal = $('.modal[data-modal='+id+']')
+	if (!id)
+		var modal = $('.modal')
+	modal.removeClass('active')
+	$('body').css('overflow', 'visible')
+}
+modalTrigger.each(function(){
+	$(this).on('click', function(){
+		var modalId = $(this).data('modal')
+		openModal(modalId)
+	})
+})
+$('.modal').each(function(){
+	var modalId = $(this).data('modal')
+	$(this).find('.modal-close').on('click', function(){
+		closeModal(modalId)
+	})
+	$(this).on('click', function(e){
+		if (e.target == this)
+			closeModal(modalId)
+	})
+})
+$(document).on('keydown', function(event) {
+	if (event.key == "Escape") {
+		closeModal()
+	}
 })
 
 // $('.product-form-tab-nav-item').filter('[data-id=flight]').css('outline', '1px solid red')

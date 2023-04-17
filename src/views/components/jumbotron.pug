@@ -38,7 +38,7 @@ section.jumbotron
           .product-form-tab-nav-item(data-id='experience')
             +icon('ic-product-xperience-fill')
             | Activities
-          .product-form-tab-nav-item(data-id='more')
+          .product-form-tab-nav-item(data-id='more', data-tab='false', data-trigger='modal', data-modal='more-products')
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
               <path d="M4 18.5C4 18.2239 4.22386 18 4.5 18H5.5C5.77614 18 6 18.2239 6 18.5V19.5C6 19.7761 5.77614 20 5.5 20H4.5C4.22386 20 4 19.7761 4 19.5V18.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
               <path d="M11 18.5C11 18.2239 11.2239 18 11.5 18H12.5C12.7761 18 13 18.2239 13 18.5V19.5C13 19.7761 12.7761 20 12.5 20H11.5C11.2239 20 11 19.7761 11 19.5V18.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -124,3 +124,28 @@ section.jumbotron
     .mouse
       .mouse-scroller
     +icon('ic-system-chevron-down')
+
+.modal(data-modal='more-products')
+  .modal-content
+    .modal-header
+      h3 More Products
+      .modal-close
+        +icon('ic-system-cross-close')
+    .modal-body
+      h4 Have a Good Trip
+      .row
+        .col 1
+        .col 2
+        .col 3
+      .row
+        .col 4
+        .col 5
+      h4 In Your Leisure Time
+      .row
+        .col 1
+        .col 2
+        .col 3
+      .row
+        .col 4
+        .col 5
+        .col 6
