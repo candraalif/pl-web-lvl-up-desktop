@@ -1,7 +1,7 @@
 import 'slick-carousel'
 
 $(window).on('scroll', function (){
-	formOnBlur()
+	// formOnBlur()
 	var windowpos = $(window).scrollTop()
 	if( windowpos >= 80 ) {
 		$('#header').addClass('active')
@@ -45,23 +45,23 @@ $('.bg-image-control-next').on('click', function(){
 })
 
 // Search Form Focus Mode
-function formOnFocus(){
-	$('.jumbotron').addClass('focus')
-	$('html, body').animate({
-		scrollTop: 0
-	})
-	$('.brand-background').addClass('hide')
-}
-function formOnBlur(){
-	$('.jumbotron').removeClass('focus')
-	$('.brand-background').removeClass('hide')
-}
+// function formOnFocus(){
+// 	$('.jumbotron').addClass('focus')
+// 	$('html, body').animate({
+// 		scrollTop: 0
+// 	})
+// 	$('.brand-background').addClass('hide')
+// }
+// function formOnBlur(){
+// 	$('.jumbotron').removeClass('focus')
+// 	$('.brand-background').removeClass('hide')
+// }
 $('.product-form-tab').each(function(){
 	var tab = $(this)
 	var nav = $(this).find('.product-form-tab-nav-item')
 	nav.each(function(){
 		$(this).on('click', function(){
-			formOnFocus()
+			// formOnFocus()
 			nav.removeClass('active')
 			$(this).addClass('active')
 			var id = $(this).data('id')
@@ -70,12 +70,12 @@ $('.product-form-tab').each(function(){
 		})
 	})
 })
-$('.product-form-input input').on('focus', function(){
-	formOnFocus()
-})
-$('.jumbotron-overlay').on('click', function(){
-	formOnBlur()
-})
+// $('.product-form-input input').on('focus', function(){
+// 	formOnFocus()
+// })
+// $('.jumbotron-overlay').on('click', function(){
+// 	formOnBlur()
+// })
 
 // Search Form Pills Tab
 $('.invisible-tab').each(function(){
@@ -94,9 +94,9 @@ $('.invisible-tab').each(function(){
 
 // Scroll Down
 $('.btn-scroll-down').on('click', function(){
-	var windowheight = $(window).height()
-	var headerheight = $('#header').height()
-	var scrollto = windowheight - headerheight
+	var jumbotronheight = $('.jumbotron').outerHeight()
+	var headerheight = $('#header').outerHeight()
+	var scrollto = jumbotronheight - headerheight
 	console.log('scrollto: '+scrollto)
 	$('html, body').animate({
 		scrollTop: scrollto
