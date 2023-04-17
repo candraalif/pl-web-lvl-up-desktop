@@ -97,7 +97,7 @@ $('.btn-scroll-down').on('click', function(){
 	var jumbotronheight = $('.jumbotron').outerHeight()
 	var headerheight = $('#header').outerHeight()
 	var scrollto = jumbotronheight - headerheight
-	console.log('scrollto: '+scrollto)
+	// console.log('scrollto: '+scrollto)
 	$('html, body').animate({
 		scrollTop: scrollto
 	})
@@ -135,6 +135,21 @@ $('.merch-filterable').each(function(){
 			$(this).removeClass('btn-secondary')
 			console.log('data filter: ' + datafilter)
 			merchFilter(datafilter)
+		})
+	})
+})
+
+// Search Form Pills Tab
+$('.m-tab').each(function(){
+	var tab = $(this)
+	var nav = $(this).find('.m-tab-nav-item')
+	nav.each(function(){
+		$(this).on('click', function(){
+			nav.removeClass('active')
+			$(this).addClass('active')
+			var id = $(this).data('id')
+			tab.find('.m-tab-content-item').removeClass('active')
+			tab.find('.m-tab-content-item[data-id='+id+']').addClass('active')
 		})
 	})
 })

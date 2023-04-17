@@ -241,3 +241,17 @@
 .latest-search {
   background: $light-stain;
 }
+
+.seo {
+  a {
+    display: block;
+    color: $dark-secondary;
+    text-decoration: none;
+    outline: 0;
+    margin-bottom: 16px;
+    &:hover,
+    &:focus {
+      color: $blue-primary;
+    }
+  }
+}

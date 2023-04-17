@@ -1,0 +1,81 @@
+// Momentum Nav Tab
+.m-tab {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+
+  .m-tab-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 8px 16px 0 16px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid $light-secondary;
+    overflow-x: auto;
+    * {
+      transition: all ease 0.2s;
+    }
+    .m-tab-nav-item {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      text-align: center;
+      font-weight: $boldfontweight;
+      position: relative;
+      padding: 12px 8px;
+      color: $dark-secondary;
+      cursor: pointer;
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 8px;
+        background: $blue-primary;
+        border-radius: 8px;
+        transition: all ease 0.2s;
+      }
+      &:hover,
+      &:focus {
+        &::before {
+          bottom: -4px;
+        }
+      }
+      &.active {
+        color: $blue-primary;
+        &::before {
+          bottom: -4px;
+        }
+      }
+    }
+  }
+  .m-tab-content {
+    .m-tab-content-item {
+      padding: 16px;
+      display: none;
+      &.active {
+        display: block;
+        animation: tabcontent 0.2s ease-in;
+      }
+    }
+  }
+}
+
+@keyframes tabcontent {
+  from {
+    transform: translateX(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
