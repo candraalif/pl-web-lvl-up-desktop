@@ -78,4 +78,23 @@
   &.btn-dark-transparent {
     background: rgba(3, 18, 26, 0.5);
   }
+
+  &.btn-top-baner-close {
+    padding: 4px 12px;
+    font-size: 12px;
+    background: rgba(3, 18, 26, 0.5);
+    border: 1px solid transparent;
+    gap: 4px;
+    &:hover,
+    &:focus {
+      border: 1px solid $light-primary;
+    }
+    svg {
+      width: 16px;
+      height: 16px;
+      path {
+        stroke: $light-primary;
+      }
+    }
+  }
 }

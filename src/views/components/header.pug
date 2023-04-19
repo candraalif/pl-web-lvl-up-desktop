@@ -1,10 +1,20 @@
 mixin menu(region,isLogin)
   header
     // Top Banner
-    a#top-banner(href='#')
+    -var topBgImage = '/assets/images/top-banner-background.png'
+    -var topBgColor = '#0194F3'
+    -var topFontColor = '#FFF'
+    #top-banner(style='background-image:url('+topBgImage+');background-color:'+topBgColor+';')
       .container
-        img(src=require('images/top-banner-image-content.png'), alt='top image banner')
-        //- span Unlock member-only deals and manage your bookings with ease.
+        .top-banner-grid
+          .top-banner-content
+            a(href='#')
+              //- img(src=require('images/top-banner-image-content.png'), alt='top image banner')
+              span(style='color:'+topFontColor) Unlock member-only deals and manage your bookings with ease.
+          .top-banner-close
+            a.btn.btn-pills.btn-top-baner-close(href='#')
+              | Close
+              +icon('ic-system-cross-close')
     // Header
     #header
       .container

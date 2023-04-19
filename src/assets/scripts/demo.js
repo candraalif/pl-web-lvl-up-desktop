@@ -11,6 +11,12 @@ $(window).on('scroll', function (){
 	$('.bg-image').css('top', windowpos/1.5 );
 });
 
+var topBanner = $('#top-banner')
+topBanner.find('.top-banner-close').on('click', function(e){
+	e.preventDefault()
+	topBanner.css('max-height',0)
+})
+
 // Jumbotron Background Image Slider
 $('.jumbotron .bg-image .bg-image-item').each(function() {
 	let bg = $(this).data('image-bg')
