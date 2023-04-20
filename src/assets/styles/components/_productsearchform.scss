@@ -12,7 +12,7 @@
   .product-form-tab-nav {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 4px;
     padding: 8px 16px 0 16px;
     width: 100%;
@@ -41,8 +41,18 @@
       border: 1px solid transparent;
       border-radius: 24px;
       &:not(.active) {
-        svg path {
+        & > svg path {
           fill: $light-primary;
+        }
+        .sub-product-chevron {
+          & > svg path {
+            stroke: $light-primary;
+          }
+        }
+      }
+      .sub-product-chevron {
+        & > svg {
+          vertical-align: middle;
         }
       }
       // &::before {
@@ -85,6 +95,7 @@
   .product-form-tab-content {
     .product-form-tab-content-item {
       padding: 16px;
+      padding-bottom: 4px;
       display: none;
       &.active {
         animation: tabcontent 0.2s ease-in;
@@ -100,14 +111,12 @@
   flex-wrap: nowrap;
   box-sizing: border-box;
   width: 100%;
-  overflow: hidden;
 
   .invisible-tab-nav {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 8px;
-    padding: 8px 16px 0 16px;
     width: 100%;
     box-sizing: border-box;
     * {
@@ -128,7 +137,7 @@
   }
   .invisible-tab-content {
     .invisible-tab-content-item {
-      padding: 16px;
+      padding: 16px 0;
       display: none;
       &.active {
         display: block;
@@ -155,26 +164,44 @@
   justify-content: space-between;
   background-color: $light-primary;
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
+  border-radius: 16px;
   color: $dark-stain;
+  margin-top: 28px;
   & + & {
     margin-top: 16px;
   }
-  button {
-    width: 320px;
-    padding: 16px !important;
-  }
   .product-form-input {
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+
+    label {
+      position: absolute;
+      top: -28px;
+      left: 16px;
+      font-size: 14px;
+      color: $light-primary;
+    }
+
     &.border-right {
       border-right: 1px solid $light-secondary;
     }
-    width: 100%;
+
     input {
-      border-radius: 10px;
+      border-radius: 16px;
       border: 0;
       width: 100%;
       padding: 16px;
       font-size: 16px;
+    }
+  }
+  .product-form-cta {
+    overflow: hidden;
+    border-radius: 0 16px 16px 0;
+    flex-shrink: 0;
+    button {
+      padding: 16px ;
+      border-radius: 0;
     }
   }
 }

@@ -17,6 +17,7 @@
     box-sizing: border-box;
     border-bottom: 1px solid $light-secondary;
     overflow-x: auto;
+    overflow-y: hidden;
     * {
       transition: all ease 0.2s;
     }

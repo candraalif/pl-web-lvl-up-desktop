@@ -23,7 +23,7 @@
     padding-top: 20vh;
     padding-bottom: 10vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     color: $light-primary;
     position: relative;
@@ -141,7 +141,6 @@
       justify-content: center;
       padding: 8px 16px;
       border-radius: 24px;
-      background: rgba(3, 18, 26, 0.25);
       color: $light-primary;
       font-weight: $boldfontweight;
       transition: all ease 0.2s;

@@ -10,9 +10,12 @@ section.jumbotron
   //- .bg-image-control-next
   //-   +icon('ic-system-chevron-right')
   .jumbotron-content
+    
     h1.slogan Southeast Asia's<br />Leading Travel Platform
+
     .product-form
       .product-form-tab
+
         .product-form-tab-nav
           .product-form-tab-nav-item.active(data-id='hotel')
             +icon('ic-product-hotel-fill')
@@ -20,6 +23,8 @@ section.jumbotron
           .product-form-tab-nav-item(data-id='flight')
             +icon('ic-product-flight-fill')
             | Flights
+            .sub-product-chevron
+              +icon('ic-system-chevron-down')
           //- .product-form-tab-nav-item(data-id='flight-hotel')
           //-   +icon('ic-product-trip-package-fill')
           //-   | Flight+Hotel
@@ -51,11 +56,14 @@ section.jumbotron
               <path d="M3.5 5C3.5 4.17157 4.17157 3.5 5 3.5V3.5C5.82843 3.5 6.5 4.17157 6.5 5V5C6.5 5.82843 5.82843 6.5 5 6.5V6.5C4.17157 6.5 3.5 5.82843 3.5 5V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
             | More
+        
         .product-form-tab-content
           .product-form-tab-content-item.active(data-id='hotel')
             .invisible-tab
               .invisible-tab-nav
-                button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item.active(data-id='1')
+                button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item.active(data-id='all')
+                  | All
+                button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='1')
                   +icon('ic-product-hotel-fill')
                   | Hotels
                 button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='2')
@@ -68,17 +76,23 @@ section.jumbotron
                   +icon('ic-product-holiday-stays')
                   | Apartments
               .invisible-tab-content
-                .invisible-tab-content-item.active(data-id='1')
-                  .product-form-container
+                .invisible-tab-content-item.active(data-id='all')
+                  form.product-form-container
                     .product-form-input.border-right
-                      input(type="text", placeholder="City, hotel, and places to go")
+                      label(for='input-hotel') City, destination, or hotel
+                      input(id='input-hotel', type="text", placeholder="City, hotel, and places to go")
                     .product-form-input.border-right
-                      input(type="text", placeholder="Anytime")
+                      label(for='input-date') Dates
+                      input(id='input-date', type="text", placeholder="Anytime")
                     .product-form-input
-                      input(type="text", placeholder="Add guest & room")
-                    button.btn.btn-orange.btn-small
-                      +icon('ic-system-search')
-                      | Search
+                      label(for='input-guest-room') Guest(s) & Room(s)
+                      input(id='input-guest-room', type="text", placeholder="Add guest & room")
+                    .product-form-cta
+                      button.btn.btn-orange.btn-small
+                        +icon('ic-system-search')
+                        | Search
+                .invisible-tab-content-item(data-id='1')
+                  .product-form-container Hotels
                 .invisible-tab-content-item(data-id='2')
                   .product-form-container Holiday Stays Form
                 .invisible-tab-content-item(data-id='3')
@@ -89,8 +103,7 @@ section.jumbotron
               i Trusted by
               img(src=require('images/partner-logo.png'), alt="partner logo")
             .life-your-way
-              | Limitless travel products and experiences — choices to enjoy 
-              img(src=require('images/life-your-way.png'), alt="partner logo")
+              img(src=require('images/rbt.png'), alt="RBT")
           .product-form-tab-content-item(data-id='flight')
             .product-form-container
               .product-form-input.border-right
