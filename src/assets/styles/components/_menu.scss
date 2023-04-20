@@ -18,21 +18,26 @@ header {
   img {
     display: block;
     height: 24px;
-    margin: auto;
   }
   .top-banner-grid {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 8px;
+    padding: 8px 16px;
   }
   .top-banner-content {
+    display: block;
+    flex-grow: 1;
+    text-align: left;
     p, span {
       margin: 0;
       line-height: 1;
       color: $light-primary;
     }
+  }
+  .top-banner-close {
+    flex-shrink: 0;
   }
 }
 

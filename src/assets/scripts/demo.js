@@ -201,4 +201,11 @@ $(document).on('keydown', function(event) {
 	}
 })
 
+$('#email-subscribe').on('focus', function(){
+	$(this).parent('.form-group').addClass('active')
+})
+$('#email-subscribe').on('blur', function(){
+	$(this).parent('.form-group').removeClass('active')
+})
+
 // $('.product-form-tab-nav-item').filter('[data-id=flight]').css('outline', '1px solid red')

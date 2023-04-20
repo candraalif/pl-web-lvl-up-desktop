@@ -1,0 +1,22 @@
+mixin subscribe(type)
+  footer#subscribe(class=type)
+    .container
+      .subscribe-grid
+        .subscribe-left
+          img.subscribe-image-phone(src=require('images/subscribe-image-phone.png'))
+        .subscribe-right
+          h3 Always in the know about travel tips, recommendations, and latest promos.
+          form
+            .form-group
+              label(for="email-subscribe")
+                +icon('ic-contact-mail')
+              input#email-subscribe.form-control(placeholder='Your email address')
+            button.btn.btn-orange Subscribe to Newsletter
+          .spacer-24
+          h4 Have your dream trip at your fingertips. <u>Get the App</u>.
+          .download-app
+            img(src=require('images/download-app-qr.png'), alt="qr code", style='width:80px')
+            a(href='#')
+              img(src=require('images/download-app-ios.png'), alt="ios", style='width:160px')
+            a(href='#')
+              img(src=require('images/download-app-android.png'), alt="android", style='width:160px')

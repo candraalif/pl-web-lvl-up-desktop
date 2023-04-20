@@ -1,4 +1,165 @@
 /* src/assets/styles/components/_footer.scss  */
+#subscribe {
+  background-image: linear-gradient(170.36deg, #0A9AF2 -7.98%, #0071CE 115.1%);
+  
+  .subscribe-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    
+    .subscribe-left {
+      display: none;
+    }
+
+    .subscribe-right {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 16px;
+      gap: 24px;
+
+      h3 {
+        color: $light-primary;
+        font-size: 20px;
+        flex-grow: 1;
+      }
+      h4 {
+        display: none;
+      }
+      form {
+        display: flex;
+        flex-shrink: 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        .form-group {
+          min-width: 400px;
+          background: $light-primary;
+          border-radius: 6px;
+          overflow: hidden;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          &.active {
+            outline: 4px solid $blue-primary;
+          }
+          input {
+            flex-grow: 1;
+            border: 0;
+            padding: 16px 8px;
+          }
+        }
+        button {
+          flex-shrink: 0;
+        }
+      }
+      svg {
+        vertical-align: middle;
+        margin-left: 8px;
+        path {
+          fill: $blue-primary;
+        }
+      }
+      .download-app {
+        display: none;
+      }
+    }
+  }
+
+  &.sea {
+    background-image:url('/assets/images/subscribe-bg-image.png');
+    background-size: cover;
+    background-position: bottom right;
+    
+    .subscribe-grid {
+      gap: 16px;
+
+      .subscribe-left {
+        display: block;
+        font-size: 0;
+        padding-top: 40px;
+        flex-shrink: 0;
+
+        .subscribe-image-phone {
+          width: 300px;
+        }
+      }
+
+      .subscribe-right {
+        display: block;
+        flex-grow: 1;
+        padding: 40px;
+
+        h3 {
+          color: $light-primary;
+          font-size: 32px;
+        }
+        h4 {
+          display: block;
+          color: $light-primary;
+          font-size: 20px;
+        }
+        form {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          .form-group {
+            min-width: auto;
+            background: $light-primary;
+            border-radius: 6px;
+            overflow: hidden;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            &.active {
+              outline: 4px solid $blue-primary;
+            }
+            input {
+              flex-grow: 1;
+              border: 0;
+              padding: 16px 8px;
+            }
+          }
+          button {
+            flex-shrink: 0;
+          }
+        }
+        svg {
+          vertical-align: middle;
+          margin-left: 8px;
+          path {
+            fill: $blue-primary;
+          }
+        }
+        .download-app {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 16px;
+          a {
+            border-radius: 3px;
+            display: inline-block;
+            font-size: 0;
+            img {
+              display: inline-block;
+            }
+            &:hover,
+            &:focus {
+              outline: 4px solid rgba(255, 255, 255, 0.25);
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 #footer {
   color: $light-primary;
@@ -8,9 +169,12 @@
   font-weight: $boldfontweight;
   a {
     font-family: inherit;
-    font-weight: bold;
     color: inherit;
-    display: block;
+    display: inline-block;
+    &:hover,
+    &:focus {
+      color: $light-primary;
+    }
   }
   ul {
     list-style: none;
