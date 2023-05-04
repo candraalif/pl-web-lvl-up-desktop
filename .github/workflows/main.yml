@@ -22,7 +22,7 @@ jobs:
       - name: Build production bundle
         uses: borales/actions-yarn@v4
         with:
-          cmd: build:prod # will run `yarn build:prod` command
+          cmd: build:prod # will run `yarn prod` command
       - name: Test the app
         uses: borales/actions-yarn@v4
         with:
