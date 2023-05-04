@@ -165,9 +165,9 @@
             position: absolute;
             top: -7px;
             left: 0;
-            width: 2px;
             height: 8px;
-            border: 2px solid $light-primary;
+            border: 1px solid $light-primary;
+            border-radius: 2px;
             animation: scrolldown 1.5s infinite;
             transition: all ease 02s;
           }
