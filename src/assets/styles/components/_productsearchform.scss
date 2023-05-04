@@ -233,12 +233,62 @@
   justify-content: center;
   gap: 16px;
   img {
-    height: 40px;
+    display: inline-block;
   }
 }
 .life-your-way {
   align-items: flex-start;
   img {
     height: 32px;
+  }
+}
+
+.trusted-partners {
+  .trusted-partners-text {
+    flex-shrink: 0;
+  }
+  .trusted-partners-logos {
+    flex: 0 1 auto;
+    display: flex;
+    gap: 8px;
+    .trusted-partners-item {
+      padding: 8px;
+      border-radius: 6px;
+      display: none;
+      transition: all ease 0.2s;
+      opacity: 1;
+      cursor: pointer;
+      text-decoration: none;
+      &:hover {
+        background: $light-primary;
+        opacity: 1;
+        & > img {
+          filter: none;
+        }
+      }
+      & > img {
+        display: block;
+        height: 24px;
+        width: auto;
+        filter: invert(100%) saturate(0) brightness(1000%);
+      }
+      &.active {
+        display: block;
+        animation: fading 0.2s ease-in;
+      }
+    }
+  }
+}
+
+
+
+@keyframes fading {
+  from {
+    transform: translateX(-16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 0.5;
   }
 }

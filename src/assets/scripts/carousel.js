@@ -6,7 +6,7 @@ $('.carousel').each(function(){
 	$(this).slick({
 		infinite: false,
 		slidesToShow: slideShown
-	});
+	})
 })
 $('.merch-filterable').each(function(){
 	var filterarea = $(this)

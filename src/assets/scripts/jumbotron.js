@@ -94,3 +94,41 @@ $('.btn-scroll-down').on('click', function(){
 		scrollTop: scrollto
 	})
 })
+
+var partnerCarousel = $('.trusted-partners-logos')
+var partnerSlideShown = partnerCarousel.data('shown')
+var partnerItem = partnerCarousel.children()
+var partnerTotalItem = partnerCarousel.children().length
+function fadingPartner(a){
+	var start = a
+	var rangeItem = start + partnerSlideShown
+	partnerItem.each(function(){
+		var partnerItemIndex = $(this).index() + 1
+		if( partnerItemIndex >= start && partnerItemIndex < rangeItem ) {
+			$(this).addClass('active')
+		} else {
+			$(this).removeClass('active')
+		}
+	})
+}
+var partnerItemIndexStart = 1
+var timer = setInterval(function(){
+	partnerItemIndexStart = partnerItemIndexStart + partnerSlideShown
+	if(partnerItemIndexStart > partnerTotalItem)
+		partnerItemIndexStart = 1
+	// Start Rolling
+	fadingPartner(partnerItemIndexStart)
+}, 5000)
+$('.trusted-partners-item').on({
+	mouseenter: function(){
+		clearInterval(timer)
+	}, mouseleave: function(){
+		timer = setInterval(function(){
+			partnerItemIndexStart = partnerItemIndexStart + partnerSlideShown
+			if(partnerItemIndexStart > partnerTotalItem)
+				partnerItemIndexStart = 1
+			// Start Rolling
+			fadingPartner(partnerItemIndexStart)
+		}, 5000)
+	}
+})
