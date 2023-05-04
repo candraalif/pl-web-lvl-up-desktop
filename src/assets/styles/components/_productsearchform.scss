@@ -59,15 +59,31 @@
       .product-dropdown {
         display: none;
         flex-direction: row;
-        flex-wrap: nowrap;
+        box-sizing: border-box;
         padding: 0;
         margin: 0;
-        list-style: none;
+        flex-wrap: nowrap;
         position: absolute;
-        top: 100%;
-        background: $light-primary;
+        top: calc(100% + 8px);
+        left: 0;
         color: $dark-secondary;
         z-index: 20;
+        &.active {
+          display: flex;
+        }
+        & > .product-dropdown-item {
+          flex: 1 0 auto;
+          background: $light-primary;
+          border-right: 1px solid $light-secondary;
+          padding: 8px 16px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 8px;
+          &:last-child {
+            border-right: 0;
+          }
+        }
       }
 
       &.active {
@@ -208,6 +224,10 @@
       width: 100%;
       padding: 16px;
       font-size: 16px;
+      &:disabled,
+      &[disabled] {
+        opacity: 0.5;
+      }
     }
   }
   .product-form-cta {
@@ -260,8 +280,8 @@
       cursor: pointer;
       text-decoration: none;
       &:hover {
-        background: $light-primary;
         opacity: 1;
+        background: $light-primary;
         & > img {
           filter: none;
         }
@@ -277,10 +297,20 @@
         animation: fading 0.2s ease-in;
       }
     }
+    &[data-design-alt="2"] {
+      .trusted-partners-item {
+        opacity: 0.5;
+        background: $light-primary;
+        &:hover {
+          opacity: 1;
+        }
+        & > img {
+          filter: none;
+        }
+      }
+    }
   }
 }
-
-
 
 @keyframes fading {
   from {
@@ -290,5 +320,20 @@
   to {
     transform: translateX(0);
     opacity: 0.5;
+  }
+}
+
+.layout-flight-search {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  .layout-flight-col[data-grow="true"] {
+    flex: 1 1 auto;
+  }
+  .layout-flight-col[data-grow="false"] {
+    flex: 0 1 auto;
   }
 }

@@ -56,9 +56,16 @@ $('.product-form-tab').each(function(){
 				var id = $(this).data('id')
 				tab.find('.product-form-tab-content-item').removeClass('active')
 				tab.find('.product-form-tab-content-item[data-id='+id+']').addClass('active')
-			} else {
-				// Nothing
 			}
+			// If Has Dropdown
+			var dropdownBox = $(this).find('.product-dropdown')
+			var hasDropdown = dropdownBox.length
+			if(hasDropdown > 0) {
+				dropdownBox.toggleClass('active').trigger('focus')
+			}
+			dropdownBox.on('focusout', function () {
+				$(this).removeClass('active')
+			})
 		})
 	})
 })
