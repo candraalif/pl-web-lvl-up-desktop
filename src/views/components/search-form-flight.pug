@@ -1,0 +1,173 @@
+.invisible-tab
+  .invisible-tab-nav
+    button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item.active(data-id='1')
+      | One-way/Roundtrip
+    button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='2')
+      | Multi-city
+  .invisible-tab-content
+    .invisible-tab-content-item.active(data-id='1')
+      //- One-way/Roundtrip
+      form.layout-flight-search
+        .product-form-additional-fields
+          button.btn.btn-small.btn-light-transparent(style='border:1px solid #fff')
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <g fill="none" fill-rule="evenodd">
+                <rect width="24" height="24"></rect>
+                <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2,21 L13,21 L13,19.5 C13,16.4624339 10.5375661,14 7.5,14 L7.5,14 C4.46243388,14 2,16.4624339 2,19.5 L2,21 Z M7,4 L8,4 C9.65685425,4 11,5.34314575 11,7 L11,8.5 C11,10.4329966 9.43299662,12 7.5,12 L7.5,12 C5.56700338,12 4,10.4329966 4,8.5 L4,7 C4,5.34314575 5.34314575,4 7,4 Z"></path>
+                <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16,19 L22,19 L22,18 C22,14.4624339 19.5581561,12 17,12 C15.6264236,12 14.7600111,12.2294943 14,13 M16,2 L16.3162278,2.9486833 C16.7245699,4.17370972 17.8709864,5 19.1622777,5 L21,5"></path><path stroke="#0194F3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16,2 L17,2 C18.6568542,2 20,3.34314575 20,5 L20,6.5 C20,8.43299662 18.4329966,10 16.5,10 L16.5,10 C14.5670034,10 13,8.43299662 13,6.5 L13,5 C13,3.34314575 14.3431458,2 16,2 Z"></path>
+              </g>
+            </svg>
+            | 1 adult, 1 chidren, 1 infant
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 9L12 15L18 9" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          button.btn.btn-small.btn-light-transparent(style='border:1px solid #fff')
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.99997 21H17M4.10496 3H4.76788C6.0927 3 7.26067 3.869 7.64136 5.13796L9.78617 12.2873C9.91307 12.7103 10.3024 13 10.744 13H16.4059C18.0152 13 19.7434 13.8444 20.5714 15.2244C21.3043 16.4459 20.4244 18 18.9999 18H7.21493C5.67368 18 4.38318 16.8321 4.22982 15.2985L3.10992 4.0995C3.05105 3.51082 3.51333 3 4.10496 3Z" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M13 10H17" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            | Economy
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 9L12 15L18 9" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        .product-form-container.layout-flight-col(data-grow='true')
+          .product-form-input.border-right
+            label.product-form-label(for='input-flight-from') From
+            label.product-form-icon(for='input-flight-from')
+              +icon('ic-flight-take-off')
+            input(id='input-flight-from', type="text", placeholder="Departure")
+          .product-form-input
+            .product-form-flight-switch
+              label(for='input-flight-switch')
+                +icon('ic-trip-round-trip')
+              input(id='input-flight-switch', type="checkbox", placeholder="Switch")
+            label.product-form-label(for='input-flight-to') To
+            label.product-form-icon(for='input-flight-to', style='margin-left:32px')
+              +icon('ic-flight-landing')
+            input(id='input-flight-to', type="text", placeholder="Arrival")
+        .product-form-container.layout-flight-col(data-grow='true')
+          .product-form-input.border-right
+            label.product-form-label(for='input-date-departure') Departure Date
+            label.product-form-icon(for='input-date-departure')
+              +icon('ic-system-calendar')
+            input(id='input-date-departure', type="text", placeholder="23 Mar 2023")
+          .product-form-input
+            label.product-form-label(for='input-date-return')
+              input(id='toggle-date-return', type='checkbox', style='margin-right:8px;transform:translateY(2px);')
+              | Return Date
+            label.product-form-icon.disabled(for='input-date-return')
+              +icon('ic-system-calendar')
+            input(id='input-date-return', type="text", placeholder="25 Mar 2023", disabled)
+        .product-form-container.layout-flight-col(data-grow='false')
+          .product-form-cta
+            button.btn.btn-orange.btn-small
+              +icon('ic-system-search')
+
+    .invisible-tab-content-item(data-id='2')
+      //- Multi-city
+      form
+        .layout-flight-search
+          .product-form-container.layout-flight-col(data-grow='true')
+            .product-form-input.border-right
+              label.product-form-label(for='input-flight-from') From
+              label.product-form-icon(for='input-flight-from')
+                +icon('ic-flight-take-off')
+              input(id='input-flight-from', type="text", placeholder="Departure")
+            .product-form-input
+              .product-form-flight-switch
+                label(for='input-flight-switch')
+                  +icon('ic-trip-round-trip')
+                input(id='input-flight-switch', type="checkbox", placeholder="Switch")
+              label.product-form-label(for='input-flight-to') To
+              label.product-form-icon(for='input-flight-to', style='margin-left:32px')
+                +icon('ic-flight-landing')
+              input(id='input-flight-to', type="text", placeholder="Arrival")
+          .product-form-container.layout-flight-col(data-grow='true')
+            .product-form-input
+              label.product-form-label(for='input-date-departure') Departure Date
+              label.product-form-icon(for='input-date-departure')
+                +icon('ic-system-calendar')
+              input(id='input-date-departure', type="text", placeholder="23 Mar 2023")
+          .product-form-container.layout-flight-col(data-grow='false')
+            +icon('ic-system-cross-close')
+        .layout-flight-search
+          .product-form-container.layout-flight-col(data-grow='true')
+            .product-form-input.border-right
+              label.product-form-label(for='input-flight-from') From
+              label.product-form-icon(for='input-flight-from')
+                +icon('ic-flight-take-off')
+              input(id='input-flight-from', type="text", placeholder="Departure")
+            .product-form-input
+              label.product-form-label(for='input-flight-to') To
+              label.product-form-icon(for='input-flight-to')
+                +icon('ic-flight-landing')
+              input(id='input-flight-to', type="text", placeholder="Arrival")
+          .product-form-container.layout-flight-col(data-grow='true')
+            .product-form-input
+              label.product-form-label(for='input-date-departure') Departure Date
+              label.product-form-icon(for='input-date-departure')
+                +icon('ic-system-calendar')
+              input(id='input-date-departure', type="text", placeholder="23 Mar 2023")
+          .product-form-container.layout-flight-col(data-grow='false')
+            +icon('ic-system-cross-close')
+        .layout-flight-search
+          .layout-flight-col(data-grow='true')
+            .product-form-multi-city-add
+              button.btn.btn-add-multicity
+                | Add Another Flight
+          .layout-flight-col(data-grow='true').text-right
+            .product-form-cta
+              button.btn.btn-orange
+                +icon('ic-system-search')
+                | Search Flights
+          .product-form-container.layout-flight-col(data-grow='false')
+
+.recommended-features
+  span Or try these features
+  button.btn.btn-small.btn-light-transparent
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21.166 15.9839C18.9643 21.0474 13.0747 23.3674 8.0112 21.1657M21.166 15.9839C23.3676 10.9204 21.0477 5.03083 15.9842 2.82916M21.166 15.9839L2.82941 8.01096M8.0112 21.1657C2.9477 18.964 0.627736 13.0745 2.82941 8.01096M8.0112 21.1657L15.9842 2.82916M8.0112 21.1657C16.4499 19.6489 20.63 10.0354 15.9842 2.82916M8.0112 21.1657C3.36536 13.9595 7.54543 4.34602 15.9842 2.82916M2.82941 8.01096C5.03108 2.94746 10.9207 0.627492 15.9842 2.82916" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    | Discover Flight Ideas
+  button.btn.btn-small.btn-light-transparent
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.5 16.2501L18.5103 22.2656C18.7901 22.6852 19.3385 22.8308 19.7896 22.6053L20.2243 22.388C20.6694 22.1654 20.8831 21.6494 20.7258 21.1773L19 16.0001L19.7929 15.2072C20.1834 14.8167 20.1834 14.1835 19.7929 13.793L19.2071 13.2072C18.8838 12.8838 18.394 12.8282 18.0134 13.0404L17.1493 10.4479L21.8613 4.85227C22.5054 4.0875 22.457 2.95707 21.75 2.25009C21.043 1.54311 19.9126 1.49475 19.1478 2.13877L13.5523 6.85084L10.9597 5.98666C11.1719 5.60608 11.1163 5.11635 10.7929 4.79298L10.2071 4.2072C9.8166 3.81667 9.18343 3.81667 8.79291 4.2072L8.00001 5.00009L2.8228 3.27435C2.35069 3.11698 1.8347 3.33071 1.61215 3.77582L1.39481 4.2105C1.16927 4.66159 1.31491 5.21002 1.73453 5.48977L5.97998 8.32007C6.61582 8.11237 7.2948 8.00006 8 8.00006C11.5899 8.00006 14.5 10.9102 14.5 14.5001V16.2501Z" fill="#FFFFFF"></path>
+      <path d="M1.5 15.7713C1.47339 15.8238 1.44892 15.8778 1.42672 15.9333L1.34174 16.1458C1.21309 16.4674 1.26295 16.819 1.44807 17.0866L1.5 17.0001V15.7713Z" fill="#FFFFFF"></path>
+      <path d="M5 21H11C11 22.6569 9.65685 24 8 24C6.34315 24 5 22.6569 5 21Z" fill="#FFFFFF"></path>
+      <path d="M8.90503 9.07411C11.512 9.50571 13.5 11.7707 13.5 14.5V17.5L15 20V21.5C15 21.7761 14.7761 22 14.5 22H1.5C1.22386 22 1 21.7761 1 21.5V20L2.5 17.5V14.5C2.5 11.7707 4.48801 9.50571 7.09497 9.07411C7.25491 8.73481 7.60003 8.5 8 8.5C8.39997 8.5 8.74509 8.73481 8.90503 9.07411Z" fill="#FFFFFF"></path>
+    </svg>
+    | Price Alerts
+  button.btn.btn-small.btn-light-transparent
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.24409 15.6579C1.04828 16.3654 1.63205 17 2.36612 17H4.85206C5.58613 17 6.26827 16.3663 6.53122 15.681C7.13218 14.1145 8.1497 12.1707 5.45455 12.1707C2.77259 12.1707 1.67653 14.0955 1.24409 15.6579Z" fill="#FFFFFF"></path>
+      <path d="M2.90909 9.35698C2.90909 10.7628 4.04873 11.9024 5.45455 11.9024C6.86036 11.9024 8 10.7628 8 9.35698V8.54546C8 7.13964 6.86036 6 5.45455 6C4.04873 6 2.90909 7.13964 2.90909 8.54546V9.35698Z" fill="#FFFFFF"></path>
+      <path d="M22.7559 15.6579C22.9517 16.3654 22.368 17 21.6339 17H19.1479C18.4139 17 17.7317 16.3663 17.4688 15.681C16.8678 14.1145 15.8503 12.1707 18.5455 12.1707C21.2274 12.1707 22.3235 14.0955 22.7559 15.6579Z" fill="#FFFFFF"></path>
+      <path d="M21.0909 9.35698C21.0909 10.7628 19.9513 11.9024 18.5455 11.9024C17.1396 11.9024 16 10.7628 16 9.35698V8.54546C16 7.13964 17.1396 6 18.5455 6C19.9513 6 21.0909 7.13964 21.0909 8.54546V9.35698Z" fill="#FFFFFF"></path>
+      <path d="M6.73661 16.6509C6.55285 17.3636 7.13551 18 7.87154 18H16.1285C16.8645 18 17.4471 17.3636 17.2634 16.6509C16.7781 14.7685 15.4546 12.2927 12 12.2927C8.54538 12.2927 7.2219 14.7685 6.73661 16.6509Z" fill="#FFFFFF"></path>
+      <path d="M8.85714 8.83275C8.85714 10.5685 10.2642 11.9756 12 11.9756C13.7358 11.9756 15.1429 10.5685 15.1429 8.83275V8.14286C15.1429 6.4071 13.7358 5 12 5C10.2642 5 8.85714 6.40711 8.85714 8.14286V8.83275Z" fill="#FFFFFF"></path>
+    </svg>
+    | Group Booking
+.trusted-partners
+  .trusted-partners-text
+    i Trusted by
+  .trusted-partners-logos(data-shown='5', data-design-alt='1')
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-1.png'), alt="partner logo 1")
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-2.png'), alt="partner logo 2")
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-3.png'), alt="partner logo 3")
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-4.png'), alt="partner logo 4")
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-5.png'), alt="partner logo 5")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-6.png'), alt="partner logo 6")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-7.png'), alt="partner logo 7")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-8.png'), alt="partner logo 8")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-9.png'), alt="partner logo 9")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-10.png'), alt="partner logo 10")

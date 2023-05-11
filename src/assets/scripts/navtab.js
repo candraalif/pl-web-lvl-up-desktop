@@ -1,7 +1,7 @@
 // Momentum Nav Tab
 $('.m-tab').each(function(){
 	var tab = $(this)
-	var nav = $(this).find('.m-tab-nav-item')
+	var nav = tab.find('.m-tab-nav-item')
 	nav.each(function(){
 		$(this).on('click', function(){
 			nav.removeClass('active')

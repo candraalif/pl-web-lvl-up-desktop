@@ -58,13 +58,18 @@ $('.product-form-tab').each(function(){
 				tab.find('.product-form-tab-content-item[data-id='+id+']').addClass('active')
 			}
 			// If Has Dropdown
-			var dropdownBox = $(this).find('.product-dropdown')
+			var dropdownChevron = $(this).find('.sub-product-chevron')
+			var dropdownProduct = dropdownChevron.data('product-dropdown')
+			var dropdownBox = $('.product-dropdown[data-product-dropdown='+dropdownProduct+']')
+			console.log('dropdown box : '+dropdownBox)
 			var hasDropdown = dropdownBox.length
 			if(hasDropdown > 0) {
 				dropdownBox.toggleClass('active').trigger('focus')
+				dropdownChevron.addClass('active')
 			}
 			dropdownBox.on('focusout', function () {
 				$(this).removeClass('active')
+				dropdownChevron.removeClass('active')
 			})
 		})
 	})
@@ -75,6 +80,16 @@ $('.product-form-tab').each(function(){
 // $('.jumbotron-overlay').on('click', function(){
 // 	formOnBlur()
 // })
+$('#toggle-date-return').on('click', function(){
+	var checkboxState = $(this).is(":checked")
+	if (checkboxState == true) {
+		$(this).parent().siblings('.product-form-icon').removeClass('disabled')
+		$(this).parent().siblings('#input-date-return').removeAttr('disabled')
+	} else {
+		$(this).parent().siblings('.product-form-icon').addClass('disabled')
+		$(this).parent().siblings('#input-date-return').attr('disabled', 'disabled')
+	}
+})
 
 // Search Form Pills Tab
 $('.invisible-tab').each(function(){
@@ -103,39 +118,41 @@ $('.btn-scroll-down').on('click', function(){
 })
 
 var partnerCarousel = $('.trusted-partners-logos')
-var partnerSlideShown = partnerCarousel.data('shown')
-var partnerItem = partnerCarousel.children()
-var partnerTotalItem = partnerCarousel.children().length
-function fadingPartner(a){
-	var start = a
-	var rangeItem = start + partnerSlideShown
-	partnerItem.each(function(){
-		var partnerItemIndex = $(this).index() + 1
-		if( partnerItemIndex >= start && partnerItemIndex < rangeItem ) {
-			$(this).addClass('active')
-		} else {
-			$(this).removeClass('active')
+partnerCarousel.each(function(){
+	var partnerSlideShown = $(this).data('shown')
+	var partnerItem = $(this).children()
+	var partnerTotalItem = $(this).children().length
+	function fadingPartner(a){
+		var start = a
+		var rangeItem = start + partnerSlideShown
+		partnerItem.each(function(){
+			var partnerItemIndex = $(this).index() + 1
+			if( partnerItemIndex >= start && partnerItemIndex < rangeItem ) {
+				$(this).addClass('active')
+			} else {
+				$(this).removeClass('active')
+			}
+		})
+	}
+	var partnerItemIndexStart = 1
+	var timer = setInterval(function(){
+		partnerItemIndexStart = partnerItemIndexStart + partnerSlideShown
+		if(partnerItemIndexStart > partnerTotalItem)
+			partnerItemIndexStart = 1
+		// Start Rolling
+		fadingPartner(partnerItemIndexStart)
+	}, 5000)
+	partnerItem.on({
+		mouseenter: function(){
+			clearInterval(timer)
+		}, mouseleave: function(){
+			timer = setInterval(function(){
+				partnerItemIndexStart = partnerItemIndexStart + partnerSlideShown
+				if(partnerItemIndexStart > partnerTotalItem)
+					partnerItemIndexStart = 1
+				// Start Rolling
+				fadingPartner(partnerItemIndexStart)
+			}, 5000)
 		}
 	})
-}
-var partnerItemIndexStart = 1
-var timer = setInterval(function(){
-	partnerItemIndexStart = partnerItemIndexStart + partnerSlideShown
-	if(partnerItemIndexStart > partnerTotalItem)
-		partnerItemIndexStart = 1
-	// Start Rolling
-	fadingPartner(partnerItemIndexStart)
-}, 5000)
-$('.trusted-partners-item').on({
-	mouseenter: function(){
-		clearInterval(timer)
-	}, mouseleave: function(){
-		timer = setInterval(function(){
-			partnerItemIndexStart = partnerItemIndexStart + partnerSlideShown
-			if(partnerItemIndexStart > partnerTotalItem)
-				partnerItemIndexStart = 1
-			// Start Rolling
-			fadingPartner(partnerItemIndexStart)
-		}, 5000)
-	}
 })

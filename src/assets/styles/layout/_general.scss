@@ -61,8 +61,18 @@ img {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .hidden {
   display: none !important;
+}
+
+.disabled,
+*:disabled,
+*[disabled] {
+  opacity: 0.5;
 }
 
 .icon-16 {

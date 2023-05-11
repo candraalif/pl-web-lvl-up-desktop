@@ -25,19 +25,24 @@ section.jumbotron
             | Flights
             .sub-product-chevron(data-product-dropdown='flight')
               +icon('ic-system-chevron-down')
-            ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
+            //- Dropdown Flight
+            //- ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
               li.product-dropdown-item
-                +icon('ic-product-flight-fill')
-                | Flights
+                a(href='#')
+                  +icon('ic-product-flight-fill')
+                  | Flights
               li.product-dropdown-item
-                +icon('ic-flight-web-check-in-fill')
-                | Online Check-in
+                a(href='#')
+                  +icon('ic-flight-web-check-in-fill')
+                  | Online Check-in
               li.product-dropdown-item
-                +icon('ic-facilities-baggage-add')
-                | Extra Baggage
+                a(href='#')
+                  +icon('ic-facilities-baggage-add')
+                  | Extra Baggage
               li.product-dropdown-item
-                +icon('ic-product-trip-package-fill')
-                | Flight + Hotel
+                a(href='#')
+                  +icon('ic-product-trip-package-fill')
+                  | Flight + Hotel
           //- .product-form-tab-nav-item(data-id='flight-hotel')
           //-   +icon('ic-product-trip-package-fill')
           //-   | Flight+Hotel
@@ -72,138 +77,32 @@ section.jumbotron
         
         .product-form-tab-content
           
-          // Hotel Search Form
+          //- Hotel Search Form
           .product-form-tab-content-item.active(data-id='hotel')
-            .invisible-tab
-              .invisible-tab-nav
-                button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item.active(data-id='all')
-                  | All
-                button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='1')
-                  +icon('ic-product-hotel-fill')
-                  | Hotels
-                button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='2')
-                  +icon('ic-product-holiday-stays')
-                  | Holiday Stays
-                button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='3')
-                  +icon('ic-product-hotel-alternative-fill')
-                  | Villas
-                button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='4')
-                  +icon('ic-product-duotone-city-guide-fill')
-                  | Apartments
-              .invisible-tab-content
-                .invisible-tab-content-item.active(data-id='all')
-                  form.product-form-container
-                    .product-form-input.border-right
-                      label.product-form-label(for='input-hotel') City, destination, or hotel
-                      label.product-form-icon(for='input-hotel')
-                        +icon('ic-system-map-location')
-                      input(id='input-hotel', type="text", placeholder="City, hotel, and places to go")
-                    .product-form-input.border-right
-                      label.product-form-label(for='input-date') Dates
-                      label.product-form-icon(for='input-date')
-                        +icon('ic-system-calendar')
-                      input(id='input-date', type="text", placeholder="Anytime")
-                    .product-form-input
-                      label.product-form-label(for='input-room-guest') Guest(s) & Room(s)
-                      label.product-form-icon(for='input-room-guest')
-                        +icon('ic-hotel-room-guest')
-                      input(id='input-room-guest', type="text", placeholder="Add guest & room")
-                    .product-form-cta
-                      button.btn.btn-orange.btn-small
-                        +icon('ic-system-search')
-                .invisible-tab-content-item(data-id='1')
-                  .product-form-container Hotels
-                .invisible-tab-content-item(data-id='2')
-                  .product-form-container Holiday Stays Form
-                .invisible-tab-content-item(data-id='3')
-                  .product-form-container Villas Form
-                .invisible-tab-content-item(data-id='4')
-                  .product-form-container Apartments Form
-            .trusted-partners
-              .trusted-partners-text
-                i Trusted by
-              .trusted-partners-logos(data-shown='5', data-design-alt='1')
-                a.trusted-partners-item.active(href='#')
-                  img(src=require('images/logo-partner-1.png'), alt="partner logo 1")
-                a.trusted-partners-item.active(href='#')
-                  img(src=require('images/logo-partner-2.png'), alt="partner logo 2")
-                a.trusted-partners-item.active(href='#')
-                  img(src=require('images/logo-partner-3.png'), alt="partner logo 3")
-                a.trusted-partners-item.active(href='#')
-                  img(src=require('images/logo-partner-4.png'), alt="partner logo 4")
-                a.trusted-partners-item.active(href='#')
-                  img(src=require('images/logo-partner-5.png'), alt="partner logo 5")
-                a.trusted-partners-item(href='#')
-                  img(src=require('images/logo-partner-6.png'), alt="partner logo 6")
-                a.trusted-partners-item(href='#')
-                  img(src=require('images/logo-partner-7.png'), alt="partner logo 7")
-                a.trusted-partners-item(href='#')
-                  img(src=require('images/logo-partner-8.png'), alt="partner logo 8")
-                a.trusted-partners-item(href='#')
-                  img(src=require('images/logo-partner-9.png'), alt="partner logo 9")
-                a.trusted-partners-item(href='#')
-                  img(src=require('images/logo-partner-10.png'), alt="partner logo 10")
-            .life-your-way
-              img(src=require('images/rbt.png'), alt="RBT")
+            include ../components/search-form-hotel.pug
           
-          // Flight Search Form
+          //- Flight Search Form
           .product-form-tab-content-item(data-id='flight')
-            .invisible-tab
-              .invisible-tab-nav
-                button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item.active(data-id='1')
-                  | One-way/Roundtrip
-                button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='2')
-                  | Multi-city
-              .invisible-tab-content
-                .invisible-tab-content-item.active(data-id='1')
-                  form.layout-flight-search
-                    .product-form-container.layout-flight-col(data-grow='true')
-                      .product-form-input.border-right
-                        label.product-form-label(for='input-flight-from') From
-                        label.product-form-icon(for='input-flight-from')
-                          +icon('ic-flight-take-off')
-                        input(id='input-flight-from', type="text", placeholder="Departure")
-                      .product-form-input.border-right
-                        label.product-form-label(for='input-flight-to') To
-                        label.product-form-icon(for='input-flight-to')
-                          +icon('ic-flight-landing')
-                        input(id='input-flight-to', type="text", placeholder="Arrival")
-                    .product-form-container.layout-flight-col(data-grow='true')
-                      .product-form-input
-                        label.product-form-label(for='input-date-departure') Departure Date
-                        label.product-form-icon(for='input-date-departure')
-                          +icon('ic-system-calendar')
-                        input(id='input-date-departure', type="text", placeholder="23 Mar 2023")
-                      .product-form-input
-                        label.product-form-label(for='input-date-return') Return Date
-                        label.product-form-icon(for='input-date-return')
-                          +icon('ic-system-calendar')
-                        input(id='input-date-return', type="text", placeholder="25 Mar 2023", disabled)
-                    .product-form-container.layout-flight-col(data-grow='false')
-                      .product-form-cta
-                        button.btn.btn-orange.btn-small
-                          +icon('ic-system-search')
-                .invisible-tab-content-item(data-id='2')
-                  form.product-form-container
-                    .product-form-input.border-right
-                      label.product-form-label(for='input-hotel') City, destination, or hotel
-                      label.product-form-icon(for='input-hotel')
-                        +icon('ic-system-map-location')
-                      input(id='input-hotel', type="text", placeholder="City, hotel, and places to go")
-                    .product-form-input.border-right
-                      label.product-form-label(for='input-date') Dates
-                      label.product-form-icon(for='input-date')
-                        +icon('ic-system-calendar')
-                      input(id='input-date', type="text", placeholder="Anytime")
-                    .product-form-input
-                      label.product-form-label(for='input-room-guest') Guest(s) & Room(s)
-                      label.product-form-icon(for='input-room-guest')
-                        +icon('ic-hotel-room-guest')
-                      input(id='input-room-guest', type="text", placeholder="Add guest & room")
-                    .product-form-cta
-                      button.btn.btn-orange.btn-small
-                        +icon('ic-system-search')
-          
+            //- Dropdown Flight
+            ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
+              li.product-dropdown-item
+                a(href='#')
+                  +icon('ic-product-flight-fill')
+                  | Flights
+              li.product-dropdown-item
+                a(href='#')
+                  +icon('ic-flight-web-check-in-fill')
+                  | Online Check-in
+              li.product-dropdown-item
+                a(href='#')
+                  +icon('ic-facilities-baggage-add')
+                  | Extra Baggage
+              li.product-dropdown-item
+                a(href='#')
+                  +icon('ic-product-trip-package-fill')
+                  | Flight + Hotel
+            include ../components/search-form-flight.pug
+
           // Train Search Form
           .product-form-tab-content-item(data-id='train')
             p Content Train
@@ -213,6 +112,9 @@ section.jumbotron
             p Content Airport Transfer &amp; Car
           .product-form-tab-content-item(data-id='experience')
             p Content Experience
+          
+          .life-your-way
+            img(src=require('images/rbt.png'), alt="RBT")
   .btn-scroll-down
     .mouse
       .mouse-scroller
