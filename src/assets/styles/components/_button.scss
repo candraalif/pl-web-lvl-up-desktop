@@ -92,6 +92,14 @@
     }
   }
 
+  &.btn-invisible {
+    background: transparent;
+    &:hover,
+    &:focus {
+      background: rgba(255, 255, 255, 0.25);
+    }
+  }
+
   &.btn-top-baner-close {
     padding: 4px 12px;
     font-size: 12px;

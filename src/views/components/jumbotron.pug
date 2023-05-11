@@ -26,7 +26,7 @@ section.jumbotron
             .sub-product-chevron(data-product-dropdown='flight')
               +icon('ic-system-chevron-down')
             //- Dropdown Flight
-            //- ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
+            ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
               li.product-dropdown-item
                 a(href='#')
                   +icon('ic-product-flight-fill')
@@ -43,9 +43,6 @@ section.jumbotron
                 a(href='#')
                   +icon('ic-product-trip-package-fill')
                   | Flight + Hotel
-          //- .product-form-tab-nav-item(data-id='flight-hotel')
-          //-   +icon('ic-product-trip-package-fill')
-          //-   | Flight+Hotel
           .product-form-tab-nav-item(data-id='train')
             +icon('ic-product-train-fill')
             | Trains
@@ -84,7 +81,7 @@ section.jumbotron
           //- Flight Search Form
           .product-form-tab-content-item(data-id='flight')
             //- Dropdown Flight
-            ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
+            //- ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
               li.product-dropdown-item
                 a(href='#')
                   +icon('ic-product-flight-fill')

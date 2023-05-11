@@ -156,3 +156,22 @@ partnerCarousel.each(function(){
 		}
 	})
 })
+
+function countFlightMulticityForm(){
+	var count = $('#form-flight-multicity').find('.layout-flight-search').length
+	if (count == 2) {
+		$('.btn-remove-flight-route').hide()
+	} else {
+		$('.btn-remove-flight-route').show()
+	}
+}
+countFlightMulticityForm()
+$('.btn-add-multicity').on('click', function(e){
+	e.stopPropagation()
+	$('#form-flight-multicity > .layout-flight-search:first-child').clone().appendTo('#form-flight-multicity')
+	countFlightMulticityForm()
+})
+$('#form-flight-multicity').on('click', '.btn-remove-flight-route', function(events){
+	$(this).parents('.layout-flight-search').remove()
+	countFlightMulticityForm()
+});

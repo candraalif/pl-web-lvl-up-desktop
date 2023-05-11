@@ -378,8 +378,14 @@
   .layout-flight-col[data-grow="false"] {
     flex: 0 1 auto;
     box-shadow: none;
+    background-color: transparent;
     .product-form-cta {
       border-radius: 16px;
+    }
+    .btn-remove-flight-route {
+      width:48px;
+      padding:12px 0;
+      border-radius: 80px;
     }
   }
   .product-form-additional-fields {
@@ -390,6 +396,38 @@
     display: flex;
     flex-direction: row;
     gap: 8px;
+  }
+}
+
+.layout-flight-multicity {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  .layout-flight-col[data-grow="true"] {
+    flex: 1 1 auto;
+  }
+  .layout-flight-col[data-grow="false"] {
+    flex: 0 1 auto;
+  }
+
+  button.btn {
+    border-radius: 16px;
+  }
+
+  .btn-add-multicity {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px dashed $light-primary;
+    &:hover,
+    &:focus {
+      background: rgba(0, 0, 0, 0.5);
+    }
   }
 }
 
