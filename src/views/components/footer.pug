@@ -1,96 +1,191 @@
-//- src/views/components/footer.pug
-footer#footer
-  .container
-    .row
-      .col
-        .footer-content
-          img(src=require('images/footer-traveloka-logo.png'), alt="footer-column-1")
-          img(src=require('images/footer-trusted.png'), alt="footer-column-1")
-          a(href='#')
-            img(src=require('images/footer-partnership.png'), alt="footer-column-1")
-          h3 Payment Partners
-          img(src=require('images/footer-payment-logo.png'), alt="footer-column-1")
-      .col
-        .footer-content
-          h3 About Traveloka
-          ul
-            li
-              a(href='#') How to Book
-            li
-              a(href='#') Help Center
-            li
-              a(href='#') Careers
-            li
-              a(href='#') Installment
-            li
-              a(href='#') About Us
-          .spacer-24
-          h3 Follow us on
-          ul
-            li
-              +icon('ic-brand-social-twitter')
-              | Twitter
-            li
-              +icon('ic-brand-social-facebook')
-              | Facebook
-            li
-              +icon('ic-brand-social-instagram')
-              | Instagram
-            li
-              +icon('ic-brand-social-youtube')
-              | Youtube
-      .col
-        .footer-content
-          h3 Products
-          ul
-            li
-              a(href='#') Flights
-            li
-              a(href='#') Hotels
-            li
-              a(href='#') Trains
-            li
-              a(href='#') JR Pass
-            li
-              a(href='#') Top-Up &amp; Data
-            li
-              a(href='#') Attractions
-            li
-              a(href='#') Car Rental
-            li
-              a(href='#') PayLater
-            li
-              a(href='#') Bus &amp; Shuttle
-            li
-              a(href='#') Gift Voucher
-            li
-              a(href='#') Villas &amp; Apartments
-            li
-              a(href='#') Airport Transfer
-      .col
-        .footer-content
-          h3 Others
-          ul
-            li
-              a(href='#') Traveloka for Corporates
-            li
-              a(href='#') Traveloka Affiliate
-            li
-              a(href='#') Flash Sale
-            li
-              a(href='#') Blog
-            li
-              a(href='#') Privacy Policy
-            li
-              a(href='#') Terms &amp; Conditions
-            li
-              a(href='#') Register Your Accommodation
-            li
-              a(href='#') Register Your Experience Business
-            li
-              a(href='#') Traveloka Press Room
-            li
-              a(href='#') Traveloka Ads
-  .copyright
-    .container.text-center
-      Copyright © 2023 Traveloka. All rights reserved
+mixin footer(region)
+  -var region = `${region}`
+  case region
+    when 'en-id'
+      footer#footer
+        .container
+          .row
+            .col
+              .footer-content
+                img(src=require('images/footer-traveloka-logo.png'), alt="footer-column-1")
+                img(src=require('images/footer-trusted.png'), alt="footer-column-1")
+                a(href='#')
+                  img(src=require('images/footer-partnership.png'), alt="footer-column-1")
+                h3 Payment Partners
+                img(src=require('images/footer-payment-logo.png'), alt="footer-column-1")
+            .col
+              .footer-content
+                h3 About Traveloka
+                ul
+                  li
+                    a(href='#') How to Book
+                  li
+                    a(href='#') Help Center
+                  li
+                    a(href='#') Careers
+                  li
+                    a(href='#') Installment
+                  li
+                    a(href='#') About Us
+                .spacer-24
+                h3 Follow us on
+                ul
+                  li
+                    +icon('ic-brand-social-twitter')
+                    | Twitter
+                  li
+                    +icon('ic-brand-social-facebook')
+                    | Facebook
+                  li
+                    +icon('ic-brand-social-instagram')
+                    | Instagram
+                  li
+                    +icon('ic-brand-social-youtube')
+                    | Youtube
+            .col
+              .footer-content
+                h3 Products
+                ul
+                  li
+                    a(href='#') Hotels
+                  li
+                    a(href='#') Flights
+                  li
+                    a(href='#') Trains
+                  li
+                    a(href='#') Bus &amp; Shuttle
+                  li
+                    a(href='#') Airport Transfer
+                  li
+                    a(href='#') Car Rental
+                  li
+                    a(href='#') Activities
+                  li
+                    a(href='#') Holiday Stays
+                  li
+                    a(href='#') Flight + Hotels
+                  li
+                    a(href='#') Travel Insurance
+                  li
+                    a(href='#') International Data Plans
+                  li
+                    a(href='#') Attractions
+                  li
+                    a(href='#') Traveloka PayLater
+                  li
+                    a(href='#') Gift Voucher
+            .col
+              .footer-content
+                h3 Others
+                ul
+                  li
+                    a(href='#') Traveloka Affiliate
+                  li
+                    a(href='#') Traveloka Priority
+                  li
+                    a(href='#') Traveloka Points
+                  li
+                    a(href='#') Travel Guides
+                  li
+                    a(href='#') Blog
+                  li
+                    a(href='#') Privacy Policy
+                  li
+                    a(href='#') Terms &amp; Conditions
+                .spacer-24
+                h3 Partnerships
+                ul
+                  li
+                    a(href='#') Traveloka Ads
+                  li
+                    a(href='#') Traveloka for Corporates
+                  li
+                    a(href='#') Register Your Accommodation
+                  li
+                    a(href='#') Register Your Experience Business
+        .copyright
+          .container.text-center
+            Copyright © 2023 Traveloka. All rights reserved
+    default
+      footer#footer
+        .container
+          .row
+            .col
+              .footer-content
+                img(src=require('images/footer-traveloka-logo.png'), alt="footer-column-1")
+                img(src=require('images/footer-trusted.png'), alt="footer-column-1")
+                a(href='#')
+                  img(src=require('images/footer-partnership.png'), alt="footer-column-1")
+                h3 Payment Partners
+                img(src=require('images/footer-payment-logo.png'), alt="footer-column-1")
+            .col
+              .footer-content
+                h3 About Traveloka
+                ul
+                  li
+                    a(href='#') How to Book
+                  li
+                    a(href='#') Help Center
+                  li
+                    a(href='#') Careers
+                  li
+                    a(href='#') Installment
+                  li
+                    a(href='#') About Us
+                .spacer-24
+                h3 Follow us on
+                ul
+                  li
+                    +icon('ic-brand-social-twitter')
+                    | Twitter
+                  li
+                    +icon('ic-brand-social-facebook')
+                    | Facebook
+                  li
+                    +icon('ic-brand-social-instagram')
+                    | Instagram
+                  li
+                    +icon('ic-brand-social-youtube')
+                    | Youtube
+            .col
+              .footer-content
+                h3 Products
+                ul
+                  li
+                    a(href='#') Hotels
+                  li
+                    a(href='#') Flights
+                  li
+                    a(href='#') Airport Transfer
+                  li
+                    a(href='#') Car Rental
+                  li
+                    a(href='#') Activities
+                  li
+                    a(href='#') Holiday Stays
+                  li
+                    a(href='#') Gift Voucher
+                .spacer-24
+                h3 Others
+                ul
+                  li
+                    a(href='#') Travel Guides
+                  li
+                    a(href='#') Blog
+                  li
+                    a(href='#') Privacy Policy
+                  li
+                    a(href='#') Terms &amp; Conditions
+            .col
+              .footer-content
+                h3 Partnerships
+                ul
+                  li
+                    a(href='#') Traveloka for Corporates
+                  li
+                    a(href='#') Register Your Accommodation
+                  li
+                    a(href='#') Register Your Experience Business
+        .copyright
+          .container.text-center
+            Copyright © 2023 Traveloka. All rights reserved

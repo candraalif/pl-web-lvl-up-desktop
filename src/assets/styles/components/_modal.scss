@@ -73,3 +73,32 @@
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
+
+.modal[data-modal='more-products'] {
+  .row {
+    gap: 16px;
+  }
+  .more-products-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid $light-stain;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    color: inherit;
+    &:hover,
+    &:focus {
+      border: 1px solid $blue-primary;
+    }
+    .icon-circle {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background: $light-stain;
+      border-radius: 100px;
+      padding: 8px;
+    }
+  }
+}
