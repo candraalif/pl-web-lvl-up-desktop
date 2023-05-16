@@ -1,188 +1,270 @@
-section.jumbotron
-  .jumbotron-overlay
-  .bg-image
-    .bg-image-item.active(data-image-bg=require('images/image-bg-jumbotron.png'))
-    //- .bg-image-item(data-image-bg=require('images/image-bg-lyw-2.jpg'))
-    //- .bg-image-item(data-image-bg=require('images/image-bg-lyw-3.jpg'))
-    //- .bg-image-item(data-image-bg=require('images/image-bg-4.jpg'))
-  //- .bg-image-control-prev
-  //-   +icon('ic-system-chevron-left')
-  //- .bg-image-control-next
-  //-   +icon('ic-system-chevron-right')
-  .jumbotron-content
-    
-    h1.slogan Your One Stop Gateway <br />to Southeast Asia
+mixin jumbotron(region)
+  -var region = `${region}`
+  case region
+    when 'en-id'
+      section.jumbotron
+        .jumbotron-overlay
+        .bg-image
+          .bg-image-item.active(data-image-bg=require('images/image-bg-jumbotron.png'))
+          //- .bg-image-item(data-image-bg=require('images/image-bg-lyw-2.jpg'))
+          //- .bg-image-item(data-image-bg=require('images/image-bg-lyw-3.jpg'))
+          //- .bg-image-item(data-image-bg=require('images/image-bg-4.jpg'))
+        //- .bg-image-control-prev
+        //-   +icon('ic-system-chevron-left')
+        //- .bg-image-control-next
+        //-   +icon('ic-system-chevron-right')
+        .jumbotron-content
+          
+          h1.slogan From Southeast Asia to<br /> the World, All Yours.
 
-    .product-form
-      .product-form-tab
+          .product-form
+            .product-form-tab
 
-        .product-form-tab-nav
-          .product-form-tab-nav-item.active(data-id='hotel')
-            +icon('ic-product-hotel-fill')
-            | Hotels
-          .product-form-tab-nav-item(data-id='flight')
-            +icon('ic-product-flight-fill')
-            | Flights
-            .sub-product-chevron(data-product-dropdown='flight')
-              +icon('ic-system-chevron-down')
-            //- Dropdown Flight
-            ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
-              li.product-dropdown-item
-                a(href='#')
+              .product-form-tab-nav
+                .product-form-tab-nav-item(data-id='hotel')
+                  +icon('ic-product-hotel-fill')
+                  | Hotels
+                .product-form-tab-nav-item.active(data-id='flight')
                   +icon('ic-product-flight-fill')
                   | Flights
-              li.product-dropdown-item
-                a(href='#')
-                  +icon('ic-flight-web-check-in-fill')
-                  | Online Check-in
-              li.product-dropdown-item
-                a(href='#')
-                  +icon('ic-facilities-baggage-add')
-                  | Extra Baggage
-              li.product-dropdown-item
-                a(href='#')
-                  +icon('ic-product-trip-package-fill')
+                  .sub-product-chevron(data-product-dropdown='flight')
+                    +icon('ic-system-chevron-down')
+                  //- Dropdown Flight
+                  ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
+                    li.product-dropdown-item
+                      a(href='#')
+                        +icon('ic-product-flight-fill')
+                        | Flights
+                    li.product-dropdown-item
+                      a(href='#')
+                        +icon('ic-flight-web-check-in-fill')
+                        | Online Check-in
+                    li.product-dropdown-item
+                      a(href='#')
+                        +icon('ic-facilities-baggage-add')
+                        | Extra Baggage
+                    li.product-dropdown-item
+                      a(href='#')
+                        +icon('ic-product-trip-package-fill')
+                        | Flight + Hotel
+                .product-form-tab-nav-item(data-id='train')
+                  +icon('ic-product-train-fill')
+                  | Trains
+                .product-form-tab-nav-item(data-id='bus-shuttle')
+                  +icon('ic-product-bus-fill')
+                  | Bus &amp; Shuttle
+                .product-form-tab-nav-item(data-id='airport-transfer')
+                  +icon('ic-product-bus-airport-transfer')
+                  | Airport Transfer
+                .product-form-tab-nav-item(data-id='car')
+                  +icon('ic-product-car-rental-fill')
+                  | Car Rental
+                .product-form-tab-nav-item(data-id='experience')
+                  +icon('ic-product-xperience-fill')
+                  | Activities
+                .product-form-tab-nav-item(data-id='more', data-tab='false', data-trigger='modal', data-modal='more-products')
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 18.5C4 18.2239 4.22386 18 4.5 18H5.5C5.77614 18 6 18.2239 6 18.5V19.5C6 19.7761 5.77614 20 5.5 20H4.5C4.22386 20 4 19.7761 4 19.5V18.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M11 18.5C11 18.2239 11.2239 18 11.5 18H12.5C12.7761 18 13 18.2239 13 18.5V19.5C13 19.7761 12.7761 20 12.5 20H11.5C11.2239 20 11 19.7761 11 19.5V18.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M18 18.5C18 18.2239 18.2239 18 18.5 18H19.5C19.7761 18 20 18.2239 20 18.5V19.5C20 19.7761 19.7761 20 19.5 20H18.5C18.2239 20 18 19.7761 18 19.5V18.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M4 11.5C4 11.2239 4.22386 11 4.5 11H5.5C5.77614 11 6 11.2239 6 11.5V12.5C6 12.7761 5.77614 13 5.5 13H4.5C4.22386 13 4 12.7761 4 12.5V11.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M11 11.5C11 11.2239 11.2239 11 11.5 11H12.5C12.7761 11 13 11.2239 13 11.5V12.5C13 12.7761 12.7761 13 12.5 13H11.5C11.2239 13 11 12.7761 11 12.5V11.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M18 11.5C18 11.2239 18.2239 11 18.5 11H19.5C19.7761 11 20 11.2239 20 11.5V12.5C20 12.7761 19.7761 13 19.5 13H18.5C18.2239 13 18 12.7761 18 12.5V11.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M11 4.5C11 4.22386 11.2239 4 11.5 4H12.5C12.7761 4 13 4.22386 13 4.5V5.5C13 5.77614 12.7761 6 12.5 6H11.5C11.2239 6 11 5.77614 11 5.5V4.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M18 4.5C18 4.22386 18.2239 4 18.5 4H19.5C19.7761 4 20 4.22386 20 4.5V5.5C20 5.77614 19.7761 6 19.5 6H18.5C18.2239 6 18 5.77614 18 5.5V4.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M3.5 5C3.5 4.17157 4.17157 3.5 5 3.5V3.5C5.82843 3.5 6.5 4.17157 6.5 5V5C6.5 5.82843 5.82843 6.5 5 6.5V6.5C4.17157 6.5 3.5 5.82843 3.5 5V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  | More
+              
+              .product-form-tab-content
+                
+                //- Hotel Search Form
+                .product-form-tab-content-item(data-id='hotel')
+                  include ../components/search-form-hotel.pug
+                
+                //- Flight Search Form
+                .product-form-tab-content-item.active(data-id='flight')
+                  //- Dropdown Flight
+                  //- ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
+                    li.product-dropdown-item
+                      a(href='#')
+                        +icon('ic-product-flight-fill')
+                        | Flights
+                    li.product-dropdown-item
+                      a(href='#')
+                        +icon('ic-flight-web-check-in-fill')
+                        | Online Check-in
+                    li.product-dropdown-item
+                      a(href='#')
+                        +icon('ic-facilities-baggage-add')
+                        | Extra Baggage
+                    li.product-dropdown-item
+                      a(href='#')
+                        +icon('ic-product-trip-package-fill')
+                        | Flight + Hotel
+                  include ../components/search-form-flight.pug
+
+                // Train Search Form
+                .product-form-tab-content-item(data-id='train')
+                  p Content Train
+                .product-form-tab-content-item(data-id='bus-shuttle')
+                  p Content Bus &amp; Shuttle
+                .product-form-tab-content-item(data-id='airport-transfer-car')
+                  p Content Airport Transfer &amp; Car
+                .product-form-tab-content-item(data-id='experience')
+                  p Content Experience
+                
+                .life-your-way
+                  img(src=require('images/rbt.png'), alt="RBT")
+        .btn-scroll-down
+          .mouse
+            .mouse-scroller
+          +icon('ic-system-chevron-down')
+
+      .modal(data-modal='more-products')
+        .modal-content
+          .modal-header
+            h3 More Products
+            .modal-close
+              +icon('ic-system-cross-close')
+          .modal-body
+            h4 Travel Essentials
+            .row
+              .col
+                a.more-products-card(href='#')
+                  .icon-circle
+                    +icon('ic-product-trip-package-fill')
                   | Flight + Hotel
-          .product-form-tab-nav-item(data-id='train')
-            +icon('ic-product-train-fill')
-            | Trains
-          .product-form-tab-nav-item(data-id='bus-shuttle')
-            +icon('ic-product-bus-fill')
-            | Bus &amp; Shuttle
-          .product-form-tab-nav-item(data-id='airport-transfer')
-            +icon('ic-product-bus-airport-transfer')
-            | Airport Transfer
-          .product-form-tab-nav-item(data-id='car')
-            +icon('ic-product-car-rental-fill')
-            | Car Rental
-          .product-form-tab-nav-item(data-id='experience')
-            +icon('ic-product-xperience-fill')
-            | Activities
-          .product-form-tab-nav-item(data-id='more', data-tab='false', data-trigger='modal', data-modal='more-products')
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 18.5C4 18.2239 4.22386 18 4.5 18H5.5C5.77614 18 6 18.2239 6 18.5V19.5C6 19.7761 5.77614 20 5.5 20H4.5C4.22386 20 4 19.7761 4 19.5V18.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M11 18.5C11 18.2239 11.2239 18 11.5 18H12.5C12.7761 18 13 18.2239 13 18.5V19.5C13 19.7761 12.7761 20 12.5 20H11.5C11.2239 20 11 19.7761 11 19.5V18.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M18 18.5C18 18.2239 18.2239 18 18.5 18H19.5C19.7761 18 20 18.2239 20 18.5V19.5C20 19.7761 19.7761 20 19.5 20H18.5C18.2239 20 18 19.7761 18 19.5V18.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M4 11.5C4 11.2239 4.22386 11 4.5 11H5.5C5.77614 11 6 11.2239 6 11.5V12.5C6 12.7761 5.77614 13 5.5 13H4.5C4.22386 13 4 12.7761 4 12.5V11.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M11 11.5C11 11.2239 11.2239 11 11.5 11H12.5C12.7761 11 13 11.2239 13 11.5V12.5C13 12.7761 12.7761 13 12.5 13H11.5C11.2239 13 11 12.7761 11 12.5V11.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M18 11.5C18 11.2239 18.2239 11 18.5 11H19.5C19.7761 11 20 11.2239 20 11.5V12.5C20 12.7761 19.7761 13 19.5 13H18.5C18.2239 13 18 12.7761 18 12.5V11.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M11 4.5C11 4.22386 11.2239 4 11.5 4H12.5C12.7761 4 13 4.22386 13 4.5V5.5C13 5.77614 12.7761 6 12.5 6H11.5C11.2239 6 11 5.77614 11 5.5V4.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M18 4.5C18 4.22386 18.2239 4 18.5 4H19.5C19.7761 4 20 4.22386 20 4.5V5.5C20 5.77614 19.7761 6 19.5 6H18.5C18.2239 6 18 5.77614 18 5.5V4.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M3.5 5C3.5 4.17157 4.17157 3.5 5 3.5V3.5C5.82843 3.5 6.5 4.17157 6.5 5V5C6.5 5.82843 5.82843 6.5 5 6.5V6.5C4.17157 6.5 3.5 5.82843 3.5 5V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-            | More
-        
-        .product-form-tab-content
+              .col
+                a.more-products-card(href='#')
+                  .icon-circle
+                    +icon('ic-product-insurance-flight')
+                  | Travel Insurance
+              .col
+                a.more-products-card(href='#')
+                  .icon-circle
+                    +icon('ic-product-bill-data-international-fill')
+                  | International Data Plans
+            h4 Activities to Try
+            .row
+              .col
+                a.more-products-card(href='#')
+                  .icon-circle
+                    +icon('ic-xperience-duotone-attractions-fill')
+                  | Attractions
+              .col
+                a.more-products-card(href='#')
+                  .icon-circle
+                    +icon('ic-xperience-duotone-beauty-spa-fill')
+                  | Beauty &amp; Spa
+              .col
+                a.more-products-card(href='#')
+                  .icon-circle
+                    +icon('ic-xperience-duotone-playgrounds-fill')
+                  | Playgrounds
+            .row
+              .col
+                a.more-products-card(href='#')
+                  .icon-circle
+                    +icon('ic-xperience-duotone-classes-workshop-fill')
+                  | Classes &amp; Workshops
+              .col
+                a.more-products-card(href='#')
+                  .icon-circle
+                    +icon('ic-reward-lifestyle')
+                  | Entertainment
+              .col
+                a.more-products-card(href='#')
+                  .icon-circle
+                    +icon('ic-xperience-duotone-tours-fill')
+                  | Tours
+            h4 Other Services
+            .row
+              .col
+                a.more-products-card(href='#')
+                  .icon-circle
+                    +icon('ic-payment-paylater-card-fill')
+                  | Traveloka PayLater
+              .col
+                a.more-products-card(href='#')
+                  .icon-circle
+                    +icon('ic-product-duotone-gift-voucher-fill')
+                  | Gift Voucher
+
+    default
+      section.jumbotron
+        .jumbotron-overlay
+        .bg-image
+          .bg-image-item.active(data-image-bg=require('images/image-bg-jumbotron.png'))
+          //- .bg-image-item(data-image-bg=require('images/image-bg-lyw-2.jpg'))
+          //- .bg-image-item(data-image-bg=require('images/image-bg-lyw-3.jpg'))
+          //- .bg-image-item(data-image-bg=require('images/image-bg-4.jpg'))
+        //- .bg-image-control-prev
+        //-   +icon('ic-system-chevron-left')
+        //- .bg-image-control-next
+        //-   +icon('ic-system-chevron-right')
+        .jumbotron-content
           
-          //- Hotel Search Form
-          .product-form-tab-content-item.active(data-id='hotel')
-            include ../components/search-form-hotel.pug
-          
-          //- Flight Search Form
-          .product-form-tab-content-item(data-id='flight')
-            //- Dropdown Flight
-            //- ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
-              li.product-dropdown-item
-                a(href='#')
+          h1.slogan Your One Stop Gateway <br />to Southeast Asia
+
+          .product-form
+            .product-form-tab
+
+              .product-form-tab-nav
+                .product-form-tab-nav-item(data-id='hotel')
+                  +icon('ic-product-hotel-fill')
+                  | Hotels
+                .product-form-tab-nav-item.active(data-id='flight')
                   +icon('ic-product-flight-fill')
                   | Flights
-              li.product-dropdown-item
-                a(href='#')
-                  +icon('ic-flight-web-check-in-fill')
-                  | Online Check-in
-              li.product-dropdown-item
-                a(href='#')
-                  +icon('ic-facilities-baggage-add')
-                  | Extra Baggage
-              li.product-dropdown-item
-                a(href='#')
-                  +icon('ic-product-trip-package-fill')
-                  | Flight + Hotel
-            include ../components/search-form-flight.pug
+                .product-form-tab-nav-item(data-id='airport-transfer')
+                  +icon('ic-product-bus-airport-transfer')
+                  | Airport Transfer
+                .product-form-tab-nav-item(data-id='car')
+                  +icon('ic-product-car-rental-fill')
+                  | Car Rental
+                .product-form-tab-nav-item(data-id='experience')
+                  +icon('ic-product-xperience-fill')
+                  | Activities
+              
+              .product-form-tab-content
+                
+                //- Hotel Search Form
+                .product-form-tab-content-item(data-id='hotel')
+                  include ../components/search-form-hotel.pug
+                
+                //- Flight Search Form
+                .product-form-tab-content-item.active(data-id='flight')
+                  //- Dropdown Flight
+                  //- ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
+                    li.product-dropdown-item
+                      a(href='#')
+                        +icon('ic-product-flight-fill')
+                        | Flights
+                    li.product-dropdown-item
+                      a(href='#')
+                        +icon('ic-flight-web-check-in-fill')
+                        | Online Check-in
+                    li.product-dropdown-item
+                      a(href='#')
+                        +icon('ic-facilities-baggage-add')
+                        | Extra Baggage
+                    li.product-dropdown-item
+                      a(href='#')
+                        +icon('ic-product-trip-package-fill')
+                        | Flight + Hotel
+                  include ../components/search-form-flight.pug
 
-          // Train Search Form
-          .product-form-tab-content-item(data-id='train')
-            p Content Train
-          .product-form-tab-content-item(data-id='bus-shuttle')
-            p Content Bus &amp; Shuttle
-          .product-form-tab-content-item(data-id='airport-transfer-car')
-            p Content Airport Transfer &amp; Car
-          .product-form-tab-content-item(data-id='experience')
-            p Content Experience
-          
-          .life-your-way
-            img(src=require('images/rbt.png'), alt="RBT")
-  .btn-scroll-down
-    .mouse
-      .mouse-scroller
-    +icon('ic-system-chevron-down')
-
-.modal(data-modal='more-products')
-  .modal-content
-    .modal-header
-      h3 More Products
-      .modal-close
-        +icon('ic-system-cross-close')
-    .modal-body
-      h4 Travel Essentials
-      .row
-        .col
-          a.more-products-card(href='#')
-            .icon-circle
-              +icon('ic-product-trip-package-fill')
-            | Flight + Hotel
-        .col
-          a.more-products-card(href='#')
-            .icon-circle
-              +icon('ic-product-insurance-flight')
-            | Travel Insurance
-        .col
-          a.more-products-card(href='#')
-            .icon-circle
-              +icon('ic-product-bill-data-international-fill')
-            | International Data Plans
-      h4 Activities to Try
-      .row
-        .col
-          a.more-products-card(href='#')
-            .icon-circle
-              +icon('ic-xperience-duotone-attractions-fill')
-            | Attractions
-        .col
-          a.more-products-card(href='#')
-            .icon-circle
-              +icon('ic-xperience-duotone-beauty-spa-fill')
-            | Beauty &amp; Spa
-        .col
-          a.more-products-card(href='#')
-            .icon-circle
-              +icon('ic-xperience-duotone-playgrounds-fill')
-            | Playgrounds
-      .row
-        .col
-          a.more-products-card(href='#')
-            .icon-circle
-              +icon('ic-xperience-duotone-classes-workshop-fill')
-            | Classes &amp; Workshops
-        .col
-          a.more-products-card(href='#')
-            .icon-circle
-              +icon('ic-reward-lifestyle')
-            | Entertainment
-        .col
-          a.more-products-card(href='#')
-            .icon-circle
-              +icon('ic-xperience-duotone-tours-fill')
-            | Tours
-      h4 Other Services
-      .row
-        .col
-          a.more-products-card(href='#')
-            .icon-circle
-              +icon('ic-payment-paylater-card-fill')
-            | Traveloka PayLater
-        .col
-          a.more-products-card(href='#')
-            .icon-circle
-              +icon('ic-product-duotone-gift-voucher-fill')
-            | Gift Voucher
+                .product-form-tab-content-item(data-id='airport-transfer-car')
+                  p Content Airport Transfer &amp; Car
+                .product-form-tab-content-item(data-id='car')
+                  p Car Rental
+                .product-form-tab-content-item(data-id='experience')
+                  p Content Experience
+                
+                .life-your-way
+                  img(src=require('images/rbt.png'), alt="RBT")
+        .btn-scroll-down
+          .mouse
+            .mouse-scroller
+          +icon('ic-system-chevron-down')
