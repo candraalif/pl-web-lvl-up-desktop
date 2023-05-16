@@ -197,6 +197,25 @@
   img {
     max-width: 100%;
   }
+  .download-app {
+    a {
+      display: inline-block;
+      margin-bottom: 8px;
+      text-decoration: none;
+      font-size: 0;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: all ease 0.2s;
+      outline: 4px solid rgba(255, 255, 255, 0);
+      &:hover,
+      &:focus {
+        outline: 4px solid rgba(255, 255, 255, 0.25);
+      }
+      img {
+        display: inline-block;
+      }
+    }
+  }
 
   .copyright {
     border-top: 1px solid $light-secondary;
