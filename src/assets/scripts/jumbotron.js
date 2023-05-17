@@ -157,12 +157,38 @@ partnerCarousel.each(function(){
 	})
 })
 
+$('.product-form-input').each(function(){
+	var formInput = $(this)
+	$(this).find('input').on({
+		focus: function(){
+			formInput.addClass('active')
+		}, blur: function(){
+			formInput.removeClass('active')
+		}
+	})
+})
+$('.product-form-cta').each(function(){
+	var formCta = $(this)
+	$(this).find('button').on({
+		focus: function(){
+			formCta.addClass('active')
+		}, blur: function(){
+			formCta.removeClass('active')
+		}
+	})
+})
+
 function countFlightMulticityForm(){
 	var count = $('#form-flight-multicity').find('.layout-flight-search').length
 	if (count == 2) {
 		$('.btn-remove-flight-route').hide()
 	} else {
 		$('.btn-remove-flight-route').show()
+	}
+	if (count >= 5) {
+		$('.btn-add-multicity').attr('disabled', 'disabled')
+	} else {
+		$('.btn-add-multicity').removeAttr('disabled')
 	}
 }
 countFlightMulticityForm()

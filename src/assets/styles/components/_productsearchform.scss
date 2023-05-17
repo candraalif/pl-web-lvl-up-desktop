@@ -215,6 +215,17 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    &:first-child {
+      border-top-left-radius: 16px;
+      border-bottom-left-radius: 16px;
+    }
+    &:last-child {
+      border-top-right-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
+    &.active {
+      outline: 2px solid $blue-primary !important;
+    }
 
     & > label.product-form-label {
       position: absolute;
@@ -251,6 +262,11 @@
     overflow: hidden;
     border-radius: 0 16px 16px 0;
     flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    &.active {
+      outline: 2px solid $blue-primary !important;
+    }
     button {
       padding: 16px ;
       border-radius: 0;
@@ -265,6 +281,7 @@
     background: $light-primary;
     border-radius: 100px;
     border: 1px solid $light-secondary;
+    transition: all ease 0.5s;
     label {
       cursor: pointer;
       padding: 8px;
@@ -278,6 +295,9 @@
       visibility: hidden;
       width: 0;
       height: 0;
+    }
+    &:hover {
+      transform: rotate(180deg);
     }
   }
 }
@@ -343,6 +363,18 @@
         background: $light-primary;
         &:hover {
           opacity: 1;
+        }
+        & > img {
+          filter: none;
+        }
+      }
+    }
+    &[data-design-alt="3"] {
+      .trusted-partners-item {
+        opacity: 1;
+        background: $light-primary;
+        &:hover {
+          transition: scale(1.1);
         }
         & > img {
           filter: none;

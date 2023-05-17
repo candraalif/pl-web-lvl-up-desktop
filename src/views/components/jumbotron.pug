@@ -1,5 +1,7 @@
 mixin jumbotron(region)
   -var region = `${region}`
+
+  //- ID Version
   case region
     when 'en-id'
       section.jumbotron
@@ -54,7 +56,7 @@ mixin jumbotron(region)
                   +icon('ic-product-bus-fill')
                   | Bus &amp; Shuttle
                 .product-form-tab-nav-item(data-id='airport-transfer')
-                  +icon('ic-product-bus-airport-transfer')
+                  +icon('ic-product-airport-transport-fill')
                   | Airport Transfer
                 .product-form-tab-nav-item(data-id='car')
                   +icon('ic-product-car-rental-fill')
@@ -110,7 +112,7 @@ mixin jumbotron(region)
                 .product-form-tab-content-item(data-id='bus-shuttle')
                   p Content Bus &amp; Shuttle
                 .product-form-tab-content-item(data-id='airport-transfer')
-                  p Content Airport Transfer
+                  include ../components/search-form-airport-transfer.pug
                 .product-form-tab-content-item(data-id='car')
                   p Content Car Rental
                 .product-form-tab-content-item(data-id='experience')
@@ -193,6 +195,7 @@ mixin jumbotron(region)
                     +icon('ic-product-duotone-gift-voucher-fill')
                   | Gift Voucher
 
+    //- Global Version
     default
       section.jumbotron
         .jumbotron-overlay
@@ -220,7 +223,7 @@ mixin jumbotron(region)
                   +icon('ic-product-flight-fill')
                   | Flights
                 .product-form-tab-nav-item(data-id='airport-transfer')
-                  +icon('ic-product-bus-airport-transfer')
+                  +icon('ic-product-airport-transport-fill')
                   | Airport Transfer
                 .product-form-tab-nav-item(data-id='car')
                   +icon('ic-product-car-rental-fill')
@@ -258,7 +261,7 @@ mixin jumbotron(region)
                   include ../components/search-form-flight.pug
 
                 .product-form-tab-content-item(data-id='airport-transfer')
-                  p Content Airport Transfer
+                  include ../components/search-form-airport-transfer.pug
                 .product-form-tab-content-item(data-id='car')
                   p Content Car Rental
                 .product-form-tab-content-item(data-id='experience')
