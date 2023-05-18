@@ -1,0 +1,93 @@
+.invisible-tab
+  .invisible-tab-nav
+    button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item.active(data-id='without-driver')
+      +icon('ic-product-hotel-fill')
+      | Without Driver
+    button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='with-driver')
+      +icon('ic-product-hotel-fill')
+      | With Driver
+  .invisible-tab-content
+
+    .invisible-tab-content-item.active(data-id='without-driver')
+      //- Without Driver Search Form
+      form.product-form-container
+        .product-form-input.border-right
+          label.product-form-label(for='input-rental-from') Your Rental Location
+          label.product-form-icon(for='input-rental-from')
+            +icon('ic-system-map-location')
+          input(id='input-rental-from', type="text", placeholder="Enter city or region")
+        .product-form-input.border-right
+          label.product-form-label(for='input-rental-start-date') Rental Start Date
+          label.product-form-icon(for='input-rental-start-date')
+            +icon('ic-system-calendar')
+          input(id='input-rental-start-date', type="text", placeholder="23 Apr 2023")
+        .product-form-input.border-right
+          label.product-form-label(for='input-rental-start-time') Start Time
+          label.product-form-icon(for='input-rental-start-time')
+            +icon('ic-system-clock')
+          input(id='input-rental-start-time', type="text", placeholder="18:00")
+        .product-form-input.border-right
+          label.product-form-label(for='input-rental-end-date') Rental End Date
+          label.product-form-icon(for='input-rental-end-date')
+            +icon('ic-system-calendar')
+          input(id='input-rental-end-date', type="text", placeholder="29 Apr 2023")
+        .product-form-input.border-right
+          label.product-form-label(for='input-rental-end-time') End Time
+          label.product-form-icon(for='input-rental-end-time')
+            +icon('ic-system-clock')
+          input(id='input-rental-end-time', type="text", placeholder="18:00")
+        .product-form-cta
+          button.btn.btn-orange.btn-small
+            +icon('ic-system-search')
+
+    .invisible-tab-content-item(data-id='with-driver')
+      //- With Driver Search Form
+      form.product-form-container
+        .product-form-input.border-right
+          label.product-form-label(for='input-rental-from') Your Rental Location
+          label.product-form-icon(for='input-rental-from')
+            +icon('ic-system-map-location')
+          input(id='input-rental-from', type="text", placeholder="Enter city or region")
+        .product-form-input.border-right
+          label.product-form-label(for='input-rental-start-date') Rental Start Date
+          label.product-form-icon(for='input-rental-start-date')
+            +icon('ic-system-calendar')
+          input(id='input-rental-start-date', type="text", placeholder="23 Apr 2023")
+        .product-form-input.border-right
+          label.product-form-label(for='input-rental-duration') Duration
+          label.product-form-icon(for='input-rental-duration')
+            +icon('ic-system-clock')
+          input(id='input-rental-duration', type="text", placeholder="18:00")
+        .product-form-input.border-right
+          label.product-form-label(for='input-rental-pickup-time') Pickup Time
+          label.product-form-icon(for='input-rental-pickup-time')
+            +icon('ic-system-clock')
+          input(id='input-rental-pickup-time', type="text", placeholder="18:00")
+        .product-form-cta
+          button.btn.btn-orange.btn-small
+            +icon('ic-system-search')
+
+.trusted-partners
+  .trusted-partners-text
+    i Trusted by
+  .trusted-partners-logos(data-shown='5', data-design-alt='1')
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-1.png'), alt="partner logo 1")
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-2.png'), alt="partner logo 2")
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-3.png'), alt="partner logo 3")
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-4.png'), alt="partner logo 4")
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-5.png'), alt="partner logo 5")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-6.png'), alt="partner logo 6")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-7.png'), alt="partner logo 7")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-8.png'), alt="partner logo 8")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-9.png'), alt="partner logo 9")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-10.png'), alt="partner logo 10")
