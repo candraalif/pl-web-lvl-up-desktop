@@ -1,28 +1,28 @@
 form.product-form-container
   .product-form-input.border-right
-    label.product-form-label(for='input-flight-from') From
-    label.product-form-icon(for='input-flight-from')
+    label.product-form-label(for='input-at-from') From
+    label.product-form-icon(for='input-at-from')
       +icon('ic-flight-take-off')
-    input(id='input-flight-from', type="text", placeholder="Airport")
+    input(id='input-at-from', type="text", placeholder="Airport")
   .product-form-input.border-right
     .product-form-flight-switch
-      label(for='input-flight-switch')
+      label(for='input-at-switch')
         +icon('ic-trip-round-trip')
-      input(id='input-flight-switch', type="checkbox", placeholder="Switch")
-    label.product-form-label(for='input-flight-to') To
-    label.product-form-icon(for='input-flight-to', style='margin-left:32px')
+      input(id='input-at-switch', type="checkbox", placeholder="Switch")
+    label.product-form-label(for='input-at-to') To
+    label.product-form-icon(for='input-at-to', style='margin-left:32px')
       +icon('ic-system-map-location')
-    input(id='input-flight-to', type="text", placeholder="Area, address, building")
+    input(id='input-at-to', type="text", placeholder="Area, address, building")
   .product-form-input.border-right
-    label.product-form-label(for='input-room-guest') Pick up Date
-    label.product-form-icon(for='input-room-guest')
+    label.product-form-label(for='input-at-pickup-date') Pick up Date
+    label.product-form-icon(for='input-at-pickup-date')
       +icon('ic-system-calendar')
-    input(id='input-room-guest', type="text", placeholder="23 Apr 2023")
+    input(id='input-at-pickup-date', type="text", placeholder="23 Apr 2023")
   .product-form-input.border-right
-    label.product-form-label(for='input-room-guest') Pick up Time
-    label.product-form-icon(for='input-room-guest')
+    label.product-form-label(for='input-at-pickup-time') Pick up Time
+    label.product-form-icon(for='input-at-pickup-time')
       +icon('ic-system-clock')
-    input(id='input-room-guest', type="text", placeholder="18:00")
+    input(id='input-at-pickup-time', type="text", placeholder="18:00")
   .product-form-cta
     button.btn.btn-orange.btn-small
       +icon('ic-system-search')
