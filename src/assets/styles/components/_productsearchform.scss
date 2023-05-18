@@ -302,6 +302,15 @@
   }
 }
 
+.sub-products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
 .trusted-partners,
 .life-your-way {
   padding: 0 16px;

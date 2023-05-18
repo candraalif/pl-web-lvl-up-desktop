@@ -61,7 +61,7 @@ mixin jumbotron(region)
                 .product-form-tab-nav-item(data-id='car')
                   +icon('ic-product-car-rental-fill')
                   | Car Rental
-                .product-form-tab-nav-item(data-id='experience')
+                .product-form-tab-nav-item(data-id='xperience')
                   +icon('ic-product-xperience-fill')
                   | Activities
                 .product-form-tab-nav-item(data-id='more', data-tab='false', data-trigger='modal', data-modal='more-products')
@@ -115,8 +115,8 @@ mixin jumbotron(region)
                   include ../components/search-form-airport-transfer.pug
                 .product-form-tab-content-item(data-id='car')
                   include ../components/search-form-car-rental.pug
-                .product-form-tab-content-item(data-id='experience')
-                  p Content Experience
+                .product-form-tab-content-item(data-id='xperience')
+                  include ../components/search-form-xperience.pug
                 
                 .life-your-way
                   img(src=require('images/rbt.png'), alt="RBT")
@@ -265,7 +265,7 @@ mixin jumbotron(region)
                 .product-form-tab-content-item(data-id='car')
                   include ../components/search-form-car-rental.pug
                 .product-form-tab-content-item(data-id='experience')
-                  p Content Experience
+                  include ../components/search-form-xperience.pug
                 
                 .life-your-way
                   img(src=require('images/rbt.png'), alt="RBT")
