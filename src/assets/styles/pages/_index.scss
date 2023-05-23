@@ -19,7 +19,9 @@
 
   .jumbotron {
     //- Full height
-    min-height: 100vh;
+    // min-height: 100vh;
+    //- Not Full height
+    min-height: 85vh;
     padding-top: 20vh;
     padding-bottom: 10vh;
     display: flex;

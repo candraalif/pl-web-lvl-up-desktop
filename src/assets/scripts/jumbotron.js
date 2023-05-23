@@ -106,11 +106,15 @@ $('.invisible-tab').each(function(){
 	})
 })
 
+var headerheight = $('header').outerHeight()
+console.log('header height = ' + headerheight)
+// Jumbotron Top Position
+$('main').attr('style', 'margin-top: -' + headerheight + 'px')
 // Scroll Down
 $('.btn-scroll-down').on('click', function(){
+	var topbannerheight = + $('#top-banner').outerHeight()
 	var jumbotronheight = $('.jumbotron').outerHeight()
-	var headerheight = $('header').outerHeight()
-	var scrollto = jumbotronheight - headerheight
+	var scrollto = jumbotronheight - headerheight + topbannerheight
 	// console.log('scrollto: '+scrollto)
 	$('html, body').animate({
 		scrollTop: scrollto
