@@ -54,11 +54,11 @@
             input(id='input-date-departure', type="text", placeholder="23 Mar 2023")
           .product-form-input
             label.product-form-label(for='input-date-return')
-              input(id='toggle-date-return', type='checkbox', style='margin-right:8px;transform:translateY(2px);')
+              input(class='toggle-date-return', type='checkbox', style='margin-right:8px;transform:translateY(2px);')
               | Return Date
             label.product-form-icon.disabled(for='input-date-return')
               +icon('ic-system-calendar')
-            input(id='input-date-return', type="text", placeholder="25 Mar 2023", disabled)
+            input(id='input-date-return', class='input-date-return', type="text", placeholder="25 Mar 2023", disabled)
         .product-form-container.layout-flight-col(data-grow='false')
           .product-form-cta
             button.btn.btn-orange.btn-small

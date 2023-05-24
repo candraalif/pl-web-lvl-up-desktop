@@ -1,4 +1,5 @@
 $(window).on('scroll', function (){
+	var topbannerheight = + $('#top-banner').outerHeight()
 	// formOnBlur()
 	var windowpos = $(window).scrollTop()
 	if( windowpos >= 80 ) {
@@ -6,7 +7,7 @@ $(window).on('scroll', function (){
 	} else {
 		$('#header').removeClass('active')
 	}
-	$('.bg-image').css('top', windowpos/1.5 );
+	$('.bg-image').css('top', windowpos/1.5 - topbannerheight )
 });
 
 var topBanner = $('#top-banner')

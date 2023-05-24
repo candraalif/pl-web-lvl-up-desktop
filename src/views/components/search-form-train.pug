@@ -1,0 +1,86 @@
+.invisible-tab
+  .invisible-tab-nav
+    button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item.active(data-id='1')
+      +icon('ic-flag-rectangle-id')
+      | Indonesia
+    button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='2')
+      +icon('ic-flag-rectangle-jp')
+      | Japan (JR Pass)
+    button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='3')
+      +icon('ic-flag-rectangle-tw')
+      | Taiwan
+    button.btn.btn-dark-transparent.btn-small.btn-rounded.invisible-tab-nav-item(data-id='4')
+      +icon('ic-flag-rectangle-cn')
+      | China
+  .invisible-tab-content
+    .invisible-tab-content-item.active(data-id='1')
+      //- Indonesia
+      form.product-form-container
+        .product-form-input.border-right
+          label.product-form-label(for='input-train-from') From
+          label.product-form-icon(for='input-train-from')
+            +icon('ic-train-departure')
+          input(id='input-train-from', type="text", placeholder="Origin")
+        .product-form-input.border-right
+          .product-form-flight-switch
+            label(for='input-train-switch')
+              +icon('ic-trip-round-trip')
+            input(id='input-train-switch', type="checkbox", placeholder="Switch")
+          label.product-form-label(for='input-train-to') To
+          label.product-form-icon(for='input-train-to', style='margin-left:32px')
+            +icon('ic-train-return')
+          input(id='input-train-to', type="text", placeholder="Destination")
+        .product-form-input.border-right
+          label.product-form-label(for='input-train-departure-date') Departure Date
+          label.product-form-icon(for='input-train-departure-date')
+            +icon('ic-system-calendar')
+          input(id='input-train-departure-date', type="text", placeholder="23 Apr 2023")
+        .product-form-input.border-right
+          label.product-form-label(for='input-train-return-date')
+            input(class='toggle-date-return', type='checkbox', style='margin-right:8px;transform:translateY(2px);')
+            | Return Date
+          label.product-form-icon(for='input-train-return-date')
+            +icon('ic-system-calendar')
+          input(id='input-train-return-date', class='input-date-return', type="text", placeholder="29 Apr 2023", disabled='disabled')
+        .product-form-input.border-right
+          label.product-form-label(for='input-train-passangers') No. of Passangers
+          label.product-form-icon(for='input-train-passangers')
+            +icon('ic-system-clock')
+          input(id='input-train-passangers', type="text", placeholder="2 adults, 1 child")
+        .product-form-cta
+          button.btn.btn-orange.btn-small
+            +icon('ic-system-search')
+    .invisible-tab-content-item(data-id='2')
+      //- Japan (JR Pass)
+      p JR Pass
+    .invisible-tab-content-item(data-id='3')
+      //- Taiwan
+      p Taiwan
+    .invisible-tab-content-item(data-id='4')
+      //- China
+      p China
+
+.trusted-partners
+  .trusted-partners-text
+    i Trusted by
+  .trusted-partners-logos(data-shown='5', data-design-alt='1')
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-1.png'), alt="partner logo 1")
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-2.png'), alt="partner logo 2")
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-3.png'), alt="partner logo 3")
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-4.png'), alt="partner logo 4")
+    a.trusted-partners-item.active(href='#')
+      img(src=require('images/logo-partner-5.png'), alt="partner logo 5")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-6.png'), alt="partner logo 6")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-7.png'), alt="partner logo 7")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-8.png'), alt="partner logo 8")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-9.png'), alt="partner logo 9")
+    a.trusted-partners-item(href='#')
+      img(src=require('images/logo-partner-10.png'), alt="partner logo 10")

@@ -165,11 +165,11 @@
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: center;
-      svg path {
-        fill: $light-primary;
-      }
       &.active {
         background-color: $blue-primary;
+      }
+      &.svg-fill-white svg path {
+        fill: $light-primary;
       }
     }
   }

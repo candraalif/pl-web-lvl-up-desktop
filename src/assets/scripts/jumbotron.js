@@ -80,14 +80,14 @@ $('.product-form-tab').each(function(){
 // $('.jumbotron-overlay').on('click', function(){
 // 	formOnBlur()
 // })
-$('#toggle-date-return').on('click', function(){
+$('.toggle-date-return').on('click', function(){
 	var checkboxState = $(this).is(":checked")
 	if (checkboxState == true) {
 		$(this).parent().siblings('.product-form-icon').removeClass('disabled')
-		$(this).parent().siblings('#input-date-return').removeAttr('disabled')
+		$(this).parent().siblings('.input-date-return').removeAttr('disabled')
 	} else {
 		$(this).parent().siblings('.product-form-icon').addClass('disabled')
-		$(this).parent().siblings('#input-date-return').attr('disabled', 'disabled')
+		$(this).parent().siblings('.input-date-return').attr('disabled', 'disabled')
 	}
 })
 
