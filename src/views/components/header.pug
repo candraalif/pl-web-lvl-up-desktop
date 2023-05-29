@@ -33,31 +33,172 @@ mixin menu(region,isLogin)
             img.header-white(src=require('images/traveloka-logo.png'), alt="Traveloka", title="Traveloka", class="image")
           ul.menu__ul
             li.menu__item
-              a.menu__link(href='/en-id')
-                .language-country-flag(class=region === 'en-id' ? 'active' : '')
-                  +icon('ic-flag-rectangle-id')
-                .language-country-flag(class=region === 'en' ? 'active' : '')
-                  <svg class="header-default" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <g fill="none" fill-rule="evenodd">
-                      <rect width="24" height="24"></rect>
-                      <circle cx="12" cy="12" r="10" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
-                      <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12,22 C15.0375661,22 17.5,17.5228475 17.5,12 C17.5,6.4771525 15.0375661,2 12,2 C8.96243388,2 6.5,6.4771525 6.5,12 C6.5,17.5228475 8.96243388,22 12,22 Z M12,22 L12,2 M22,12 L2,12"></path>
-                    </g>
+              .menu__link(data-has-dropdown='true', data-dropdown='language-country')
+                .dropdown-trigger
+                  .language-country-flag(class=region === 'en-id' ? 'active' : '')
+                    +icon('ic-flag-rectangle-id')
+                  .language-country-flag(class=region === 'en' ? 'active' : '')
+                    <svg class="header-default" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                      <g fill="none" fill-rule="evenodd">
+                        <rect width="24" height="24"></rect>
+                        <circle cx="12" cy="12" r="10" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                        <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12,22 C15.0375661,22 17.5,17.5228475 17.5,12 C17.5,6.4771525 15.0375661,2 12,2 C8.96243388,2 6.5,6.4771525 6.5,12 C6.5,17.5228475 8.96243388,22 12,22 Z M12,22 L12,2 M22,12 L2,12"></path>
+                      </g>
+                    </svg>
+                    <svg class="header-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                      <g fill="none" fill-rule="evenodd">
+                        <rect width="24" height="24"></rect>
+                        <circle cx="12" cy="12" r="10" stroke="#0194f3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                        <path stroke="#0194f3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12,22 C15.0375661,22 17.5,17.5228475 17.5,12 C17.5,6.4771525 15.0375661,2 12,2 C8.96243388,2 6.5,6.4771525 6.5,12 C6.5,17.5228475 8.96243388,22 12,22 Z M12,22 L12,2 M22,12 L2,12"></path>
+                      </g>
+                    </svg>
+                  | EN | IDR
+                  <svg class="dropdown-chevron header-default" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
-                  <svg class="header-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <g fill="none" fill-rule="evenodd">
-                      <rect width="24" height="24"></rect>
-                      <circle cx="12" cy="12" r="10" stroke="#0194f3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
-                      <path stroke="#0194f3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12,22 C15.0375661,22 17.5,17.5228475 17.5,12 C17.5,6.4771525 15.0375661,2 12,2 C8.96243388,2 6.5,6.4771525 6.5,12 C6.5,17.5228475 8.96243388,22 12,22 Z M12,22 L12,2 M22,12 L2,12"></path>
-                    </g>
+                  <svg class="dropdown-chevron header-white" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="#0194f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
-                | EN | IDR
-                <svg class="header-default" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9L12 15L18 9" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-                <svg class="header-white" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9L12 15L18 9" stroke="#0194f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
+                .dropdown-container(data-dropdown='language-country')
+                  form(action='/', method='POST')
+                    .row.language-currency
+                      .col.country-language
+                        h3 Country & Language
+                        ul
+                          li
+                            input(type='radio', name='country-language', id='id-id' value='#')
+                            label(for='id-id')
+                              .language-currency-info
+                                +icon('ic-flag-circular-id')
+                                | Indonedia (Bahasa Indonesia)
+                              .language-currency-status
+                                +icon('ic-system-checkmark')
+                          li
+                            input(type='radio', name='country-language', id='en-id' value='/en-id', checked=region == 'en-id')
+                            label(for='en-id')
+                              .language-currency-info
+                                +icon('ic-flag-circular-id')
+                                | Indonedia (English)
+                              .language-currency-status
+                                +icon('ic-system-checkmark')
+                          li
+                            input(type='radio', name='country-language', id='en' value='/en', checked=region == 'en')
+                            label(for='en')
+                              .language-currency-info
+                                +icon('ic-flag-circular-global')
+                                | Global (English)
+                              .language-currency-status
+                                +icon('ic-system-checkmark')
+                          li
+                            input(type='radio', name='country-language', id='en-my' value='#')
+                            label(for='en-my')
+                              .language-currency-info
+                                +icon('ic-flag-circular-my')
+                                | Malaysia (English)
+                              .language-currency-status
+                                +icon('ic-system-checkmark')
+                          li
+                            input(type='radio', name='country-language', id='ms-my' value='#')
+                            label(for='ms-my')
+                              .language-currency-info
+                                +icon('ic-flag-circular-my')
+                                | Malaysia (Bahasa Malaysia)
+                              .language-currency-status
+                                +icon('ic-system-checkmark')
+                          li
+                            input(type='radio', name='country-language', id='en-ph' value='#')
+                            label(for='en-ph')
+                              .language-currency-info
+                                +icon('ic-flag-circular-ph')
+                                | Philippines (English)
+                              .language-currency-status
+                                +icon('ic-system-checkmark')
+                          li
+                            input(type='radio', name='country-language', id='en-sg' value='#')
+                            label(for='en-sg')
+                              .language-currency-info
+                                +icon('ic-flag-circular-sg')
+                                | Singapore (English)
+                              .language-currency-status
+                                +icon('ic-system-checkmark')
+                          li
+                            input(type='radio', name='country-language', id='en-th' value='#')
+                            label(for='en-th')
+                              .language-currency-info
+                                +icon('ic-flag-circular-th')
+                                | Thailand (English)
+                              .language-currency-status
+                                +icon('ic-system-checkmark')
+                          li
+                            input(type='radio', name='country-language', id='th-th' value='#')
+                            label(for='th-th')
+                              .language-currency-info
+                                +icon('ic-flag-circular-th')
+                                | ไทย (ภาษาไทย)
+                              .language-currency-status
+                                +icon('ic-system-checkmark')
+                          li
+                            input(type='radio', name='country-language', id='vi-vn' value='#')
+                            label(for='vi-vn')
+                              .language-currency-info
+                                +icon('ic-flag-circular-vn')
+                                | Việt Nam (Tiếng Việt)
+                              .language-currency-status
+                                +icon('ic-system-checkmark')
+                          li
+                            input(type='radio', name='country-language', id='en-vn' value='#')
+                            label(for='en-vn')
+                              .language-currency-info
+                                +icon('ic-flag-circular-vn')
+                                | Vietnam (English)
+                              .language-currency-status
+                                +icon('ic-system-checkmark')
+                          li
+                            input(type='radio', name='country-language', id='en-au' value='#')
+                            label(for='en-au')
+                              .language-currency-info
+                                +icon('ic-flag-circular-au')
+                                | Australia (English)
+                              .language-currency-status
+                                +icon('ic-system-checkmark')
+                      .col.currency-submit
+                        .currency
+                          h3 Currency
+                          ul
+                            li
+                              input(type='radio', name='currency', id='idr' value='idr', checked=region == 'en-id')
+                              label(for='idr')
+                                .language-currency-info
+                                  strong IDR
+                                  span.text-muted Indonesian Rupiah
+                                .language-currency-status
+                                  +icon('ic-system-checkmark')
+                            li
+                              input(type='radio', name='currency', id='aud' value='aud')
+                              label(for='aud')
+                                .language-currency-info
+                                  strong AUD
+                                  span.text-muted Australian Dollar
+                                .language-currency-status
+                                  +icon('ic-system-checkmark')
+                            li
+                              input(type='radio', name='currency', id='eur' value='eur')
+                              label(for='eur')
+                                .language-currency-info
+                                  strong EUR
+                                  span.text-muted Euro
+                                .language-currency-status
+                                  +icon('ic-system-checkmark')
+                            li
+                              input(type='radio', name='currency', id='usd' value='usd', checked=region == 'en')
+                              label(for='usd')
+                                .language-currency-info
+                                  strong USD
+                                  span.text-muted US Dollar
+                                .language-currency-status
+                                  +icon('ic-system-checkmark')
+                        .language-currency-submit
+                          a.btn.btn-primary.btn-small(href=region === 'en-id' ? '/en-id' : '/en') Done
             li.menu__item
               a.menu__link(href='#')
                 <svg class="icon-16 header-default" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -9,12 +9,16 @@ import 'slick-carousel'
 // Components
 $(function() {
   require('./assets/scripts/header')
+  require('./assets/scripts/dropdown')
   require('./assets/scripts/jumbotron')
   require('./assets/scripts/carousel')
   require('./assets/scripts/navtab')
   require('./assets/scripts/modal')
   require('./assets/scripts/subscribe')
+  require('./assets/scripts/select-country-language')
 })
 
 // Misc
-// $('.product-form-tab-nav-item').filter('[data-id=flight]').css('outline', '1px solid red')
+$('[href="#"]').on('click', function(e){
+  e.preventDefault()
+})

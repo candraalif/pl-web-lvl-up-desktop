@@ -119,6 +119,20 @@ header {
       border: 1px solid $light-primary;
       border-radius: 6px;
     }
+    &[data-has-dropdown=true] {
+      display: block;
+      padding: 0;
+      .dropdown-trigger {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4px;
+        border-radius: 6px;
+        padding: 8px;
+      }
+    }
   }
   .language-country-flag {
     display: none;
@@ -145,6 +159,100 @@ header {
     }
     .btn.btn-outline {
       border: 1px solid $blue-primary;
+    }
+  }
+}
+
+.language-currency {
+  padding: 8px;
+  gap: 24px;
+
+  input[type=radio] {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  h3 {
+    margin: 0;
+    margin-bottom: 16px;
+    color: $dark-primary;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    padding-right: 16px;
+    list-style: none;
+    li {
+      label {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 8px;
+        width: 260px;
+        justify-content: space-between;
+        padding: 4px 0;
+        border-radius: 6px;
+        
+        * {
+          cursor: pointer !important;
+        }
+  
+        .language-currency-info {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 8px;
+        }
+        .language-currency-status {
+          opacity: 0;
+          display: flex;
+          svg {
+            width: 24px !important;
+            height: 24px !important;
+            path {
+              stroke: $blue-primary;
+            }
+          }
+        }
+        &:hover {
+          background: $light-stain;
+          cursor: pointer;
+        }
+      }
+      input[type=radio]:checked + label {
+        .language-currency-status {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .col.country-language {
+    border-right: 1px solid $light-secondary;
+  }
+
+  .col.currency-submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .currency {
+      ul {
+        padding-right: 0;
+      }
+      label {
+        width: 210px;
+      }
+      strong {
+        width: 40px;
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+    }
+    .language-currency-submit {
+      display: flex;
+      justify-content: flex-end;
     }
   }
 }

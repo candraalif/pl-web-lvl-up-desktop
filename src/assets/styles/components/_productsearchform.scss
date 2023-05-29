@@ -122,6 +122,7 @@
   list-style: none;
   overflow: hidden;
   width: max-content;
+  box-shadow: 0px 8px 16px rgba(3, 18, 26, 0.2);
   &.active {
     display: flex;
   }
