@@ -1,0 +1,66 @@
+mixin search(type)
+  -var searchtype = `${type}`
+  case searchtype
+    when 'airport'
+      .search-box
+        .search-box-desc
+          strong Popular Cities or Airports
+        .search-box-lists
+          .search-box-list(data-search-value='Jakarta (JKTA)', data-search-key='Jakarta, Indonesia, JKTA')
+            strong Jakarta, Indonesia
+            span.text-muted JKTA - All Airports in Jakarta
+          .search-box-list(data-search-value='Tokyo (TYOA)', data-search-key='Tokyo, Japan, TYOA')
+            strong Tokyo, Japan
+            span.text-muted TYOA - All Airports in Tokyo
+          .search-box-list(data-search-value='Surabaya (SUB)', data-search-key='Surabaya, Indonesia, SUB, Juanda')
+            strong Surabaya, Indonesia
+            span.text-muted SUB - Juanda
+          .search-box-list(data-search-value='Bali (DPS)', data-search-key='Bali, Denpasar, Indonesia, DPS, Ngurah Rai International Airport')
+            strong Bali / Denpasar, Indonesia
+            span.text-muted DPS - Ngurah Rai International Airport
+          .search-box-list(data-search-value='Medan (KNO)', data-search-key='Medan, Indonesia, KNO, Kualanamu International Airport')
+            strong Medan, Indonesia
+            span.text-muted KNO - Kualanamu International Airport
+          .search-box-list(data-search-value='New York (JFK)', data-search-key='New York, United States, JFK, John F Kennedy Intl')
+            strong New York, United States
+            span.text-muted JFK - John F Kennedy Intl
+          .search-box-list(data-search-value='Los Angeles (LAX) ', data-search-key='Los Angeles, United States, LAX, Los Angeles International Airport')
+            strong Los Angeles, United States
+            span.text-muted LAX - Los Angeles International Airport
+          .search-box-list(data-search-value='Makassar (UPG)', data-search-key='UPG, Hasanuddin, Makassar, Indonesia')
+            strong Makassar, Indonesia
+            span.text-muted UPG - Hasanuddin
+          .search-box-list(data-search-value='Singapore (SINA)', data-search-key='Singapore, SINA')
+            strong Singapore, Singapore
+            span.text-muted SINA - All Airports in Singapore
+          .search-box-list(data-search-value='Bangkok (BKKA)', data-search-key='Bangkok, Thailand, BKKA')
+            strong Bangkok, Thailand
+            span.text-muted BKKA - All Airports in Bangkok
+          .search-box-list(data-search-value='Sydney (SYD)', data-search-key='Sydney, Australia, SYD')
+            strong Sydney, Australia
+            span.text-muted SYD - Sydney Intl
+          .search-box-list(data-search-value='Istanbul (ISTA)', data-search-key='Istanbul, Turkey, ISTA')
+            strong Istanbul, Turkey
+            span.text-muted ISTA - All Airports in Istanbul
+          .search-box-list(data-search-value='Manila (MNL)', data-search-key='Manila, Philippines, MNL, Ninoy Aquino International Airport')
+            strong Manila, Philippines
+            span.text-muted MNL - Ninoy Aquino International Airport
+    when 'destination'
+      .search-box.position-static
+        .search-box-desc
+          strong Popular Destination
+        .search-box-lists
+          .search-box-list(data-search-value='Jakarta (JKTA)', data-search-key='Jakarta, Indonesia, JKTA')
+            strong Bandung
+            span.text-muted West Java, Indonesia
+          .search-box-list(data-search-value='Tokyo (TYOA)', data-search-key='Tokyo, Japan, TYOA')
+            strong Yogyakarta
+            span.text-muted Special Region of Yogyakarta, Indonesia
+          .search-box-list(data-search-value='Tokyo (TYOA)', data-search-key='Tokyo, Japan, TYOA')
+            strong Jakarta
+            span.text-muted Indonesia
+          .search-box-list(data-search-value='Tokyo (TYOA)', data-search-key='Tokyo, Japan, TYOA')
+            strong Bali
+            span.text-muted Indonesia
+    default
+      .search-box

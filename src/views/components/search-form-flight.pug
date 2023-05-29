@@ -32,11 +32,12 @@
               <path d="M6 9L12 15L18 9" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
         .product-form-container.layout-flight-col(data-grow='true')
-          .product-form-input.border-right
+          .product-form-input.border-right(data-has-search='true', data-search='input-flight-from')
             label.product-form-label(for='input-flight-from') From
             label.product-form-icon(for='input-flight-from')
               +icon('ic-flight-take-off')
-            input(id='input-flight-from', type="text", placeholder="Departure")
+            input.search-trigger(id='input-flight-from', type="text", placeholder="Departure", data-proto-val='Jakarta (JKTA)')
+            +search('airport')
           .product-form-input
             .product-form-flight-switch
               label(for='input-flight-switch')
@@ -45,13 +46,14 @@
             label.product-form-label(for='input-flight-to') To
             label.product-form-icon(for='input-flight-to', style='margin-left:32px')
               +icon('ic-flight-landing')
-            input(id='input-flight-to', type="text", placeholder="Arrival")
+            input.search-trigger(id='input-flight-to', type="text", placeholder="Arrival", data-proto-val='Bali (DPS)')
+            +search('airport')
         .product-form-container.layout-flight-col(data-grow='true')
           .product-form-input.border-right
             label.product-form-label(for='input-date-departure') Departure Date
             label.product-form-icon(for='input-date-departure')
               +icon('ic-system-calendar')
-            input(id='input-date-departure', type="text", placeholder="23 Mar 2023")
+            input.date-picker(id='input-date-departure', type="text", placeholder="23 Mar 2023")
           .product-form-input
             label.product-form-label(for='input-date-return')
               input(class='toggle-date-return', type='checkbox', style='margin-right:8px;transform:translateY(2px);')
@@ -61,7 +63,7 @@
             input(id='input-date-return', class='input-date-return', type="text", placeholder="25 Mar 2023", disabled)
         .product-form-container.layout-flight-col(data-grow='false')
           .product-form-cta
-            button.btn.btn-orange.btn-small
+            a.btn.btn-orange.btn-small(href='https://www.traveloka.com/en-id/flight/fullsearch?ap=JKTA.DPS&dt=6-6-2023.NA&ps=1.0.0&sc=ECONOMY')
               +icon('ic-system-search')
 
     .invisible-tab-content-item(data-id='2')
@@ -74,7 +76,8 @@
                 label.product-form-label(for='input-flight-from') From
                 label.product-form-icon(for='input-flight-from')
                   +icon('ic-flight-take-off')
-                input(id='input-flight-from', type="text", placeholder="Departure")
+                input.search-trigger(id='input-flight-from', type="text", placeholder="Departure", data-proto-val='Jakarta (JKTA)')
+                +search('airport')
               .product-form-input
                 .product-form-flight-switch
                   label(for='input-flight-switch')
@@ -83,7 +86,8 @@
                 label.product-form-label(for='input-flight-to') To
                 label.product-form-icon(for='input-flight-to', style='margin-left:32px')
                   +icon('ic-flight-landing')
-                input(id='input-flight-to', type="text", placeholder="Arrival")
+                input.search-trigger(id='input-flight-to', type="text", placeholder="Arrival", data-proto-val='Bali (DPS)')
+                +search('airport')
             .product-form-container.layout-flight-col(data-grow='true')
               .product-form-input
                 label.product-form-label(for='input-date-departure') Departure Date
@@ -101,7 +105,8 @@
                 label.product-form-label(for='input-flight-from') From
                 label.product-form-icon(for='input-flight-from')
                   +icon('ic-flight-take-off')
-                input(id='input-flight-from', type="text", placeholder="Departure")
+                input.search-trigger(id='input-flight-from', type="text", placeholder="Departure", data-proto-val='Bali (DPS)')
+                +search('airport')
               .product-form-input
                 .product-form-flight-switch
                   label(for='input-flight-switch')
@@ -110,7 +115,8 @@
                 label.product-form-label(for='input-flight-to') To
                 label.product-form-icon(for='input-flight-to', style='margin-left:32px')
                   +icon('ic-flight-landing')
-                input(id='input-flight-to', type="text", placeholder="Arrival")
+                input.search-trigger(id='input-flight-to', type="text", placeholder="Arrival", data-proto-val='Makassar (UPG)')
+                +search('airport')
             .product-form-container.layout-flight-col(data-grow='true')
               .product-form-input
                 label.product-form-label(for='input-date-departure') Departure Date
@@ -133,7 +139,7 @@
                 | Add Another Flight
           .layout-flight-col(data-grow='false')
             .product-form-cta
-              button.btn.btn-orange
+              a.btn.btn-orange(href='https://www.traveloka.com/en-id/flight/multicitysearch?ps=1.0.0&sc=ECONOMY&mc=JKTA.DPS.6-6-2023_DPS.UPG.8-6-2023_UPG.TYOA.11-6-2023')
                 +icon('ic-system-search')
                 | Search Flights
 
@@ -162,27 +168,5 @@
       <path d="M8.85714 8.83275C8.85714 10.5685 10.2642 11.9756 12 11.9756C13.7358 11.9756 15.1429 10.5685 15.1429 8.83275V8.14286C15.1429 6.4071 13.7358 5 12 5C10.2642 5 8.85714 6.40711 8.85714 8.14286V8.83275Z" fill="#FFFFFF"></path>
     </svg>
     | Group Booking
-.trusted-partners
-  .trusted-partners-text
-    i Trusted by
-  .trusted-partners-logos(data-shown='5', data-design-alt='2')
-    a.trusted-partners-item.active(href='#')
-      img(src=require('images/logo-partner-1.png'), alt="partner logo 1")
-    a.trusted-partners-item.active(href='#')
-      img(src=require('images/logo-partner-2.png'), alt="partner logo 2")
-    a.trusted-partners-item.active(href='#')
-      img(src=require('images/logo-partner-3.png'), alt="partner logo 3")
-    a.trusted-partners-item.active(href='#')
-      img(src=require('images/logo-partner-4.png'), alt="partner logo 4")
-    a.trusted-partners-item.active(href='#')
-      img(src=require('images/logo-partner-5.png'), alt="partner logo 5")
-    a.trusted-partners-item(href='#')
-      img(src=require('images/logo-partner-6.png'), alt="partner logo 6")
-    a.trusted-partners-item(href='#')
-      img(src=require('images/logo-partner-7.png'), alt="partner logo 7")
-    a.trusted-partners-item(href='#')
-      img(src=require('images/logo-partner-8.png'), alt="partner logo 8")
-    a.trusted-partners-item(href='#')
-      img(src=require('images/logo-partner-9.png'), alt="partner logo 9")
-    a.trusted-partners-item(href='#')
-      img(src=require('images/logo-partner-10.png'), alt="partner logo 10")
+
+include ../components/trusted-partners.pug

@@ -204,4 +204,23 @@ $('.btn-add-multicity').on('click', function(e){
 $('#form-flight-multicity').on('click', '.btn-remove-flight-route', function(events){
 	$(this).parents('.layout-flight-search').remove()
 	countFlightMulticityForm()
-});
+})
+
+$('.search-trigger').each(function(){
+	var inputSearchTrigger = $(this)
+	var inputDefaultValue = $(this).data('proto-val')
+	inputSearchTrigger.on({
+		focus: function(){
+			$(this).siblings('.search-box').addClass('active')
+		}, blur: function(e){
+			$(this).siblings('.search-box').removeClass('active')
+			inputSearchTrigger.val(inputDefaultValue)
+		}
+	})
+	inputSearchTrigger.siblings('.search-box .search-box-list').on('click', function(e){
+		e.preventDefault()
+		var searchValue = $(this).data('search-value')
+		console.log('search value = '+searchValue)
+		inputSearchTrigger.val(searchValue)
+	})
+})

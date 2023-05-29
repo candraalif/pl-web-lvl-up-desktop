@@ -21,7 +21,8 @@
           label.product-form-label(for='input-hotel') City, destination, or hotel
           label.product-form-icon(for='input-hotel')
             +icon('ic-system-map-location')
-          input(id='input-hotel', type="text", placeholder="City, hotel, and places to go")
+          input.search-trigger(id='input-hotel', type="text", placeholder="City, hotel, and places to go", data-proto-val='Bandung, West Java, Indonesia')
+          +search('destination')
         .product-form-input.border-right
           label.product-form-label(for='input-date') Dates
           label.product-form-icon(for='input-date')
@@ -41,7 +42,8 @@
           label.product-form-label(for='input-hotel') City, destination, or hotel
           label.product-form-icon(for='input-hotel')
             +icon('ic-system-map-location')
-          input(id='input-hotel', type="text", placeholder="City, hotel, and places to go")
+          input.search-trigger(id='input-hotel', type="text", placeholder="City, hotel, and places to go", data-proto-val='Bandung, West Java, Indonesia')
+          +search('destination')
         .product-form-input.border-right
           label.product-form-label(for='input-date') Dates
           label.product-form-icon(for='input-date')
@@ -61,7 +63,8 @@
           label.product-form-label(for='input-hotel') City, destination, or holiday stay
           label.product-form-icon(for='input-hotel')
             +icon('ic-system-map-location')
-          input(id='input-hotel', type="text", placeholder="City, holiday stay, and places to go")
+          input.search-trigger(id='input-hotel', type="text", placeholder="City, holiday stay, and places to go", data-proto-val='Bandung, West Java, Indonesia')
+          +search('destination')
         .product-form-input.border-right
           label.product-form-label(for='input-date') Dates
           label.product-form-icon(for='input-date')
@@ -81,7 +84,8 @@
           label.product-form-label(for='input-hotel') City, destination, or villa
           label.product-form-icon(for='input-hotel')
             +icon('ic-system-map-location')
-          input(id='input-hotel', type="text", placeholder="City, villa, and places to go")
+          input.search-trigger(id='input-hotel', type="text", placeholder="City, villa, and places to go", data-proto-val='Bandung, West Java, Indonesia')
+          +search('destination')
         .product-form-input.border-right
           label.product-form-label(for='input-date') Dates
           label.product-form-icon(for='input-date')
@@ -101,7 +105,8 @@
           label.product-form-label(for='input-hotel') City, destination, or apartment
           label.product-form-icon(for='input-hotel')
             +icon('ic-system-map-location')
-          input(id='input-hotel', type="text", placeholder="City, apartment, and places to go")
+          input.search-trigger(id='input-hotel', type="text", placeholder="City, apartment, and places to go", data-proto-val='Bandung, West Java, Indonesia')
+          +search('destination')
         .product-form-input.border-right
           label.product-form-label(for='input-date') Dates
           label.product-form-icon(for='input-date')
@@ -115,27 +120,5 @@
         .product-form-cta
           button.btn.btn-orange.btn-small
             +icon('ic-system-search')
-.trusted-partners
-  .trusted-partners-text
-    i Trusted by
-  .trusted-partners-logos(data-shown='5', data-design-alt='1')
-    a.trusted-partners-item.active(href='#')
-      img(src=require('images/logo-partner-1.png'), alt="partner logo 1")
-    a.trusted-partners-item.active(href='#')
-      img(src=require('images/logo-partner-2.png'), alt="partner logo 2")
-    a.trusted-partners-item.active(href='#')
-      img(src=require('images/logo-partner-3.png'), alt="partner logo 3")
-    a.trusted-partners-item.active(href='#')
-      img(src=require('images/logo-partner-4.png'), alt="partner logo 4")
-    a.trusted-partners-item.active(href='#')
-      img(src=require('images/logo-partner-5.png'), alt="partner logo 5")
-    a.trusted-partners-item(href='#')
-      img(src=require('images/logo-partner-6.png'), alt="partner logo 6")
-    a.trusted-partners-item(href='#')
-      img(src=require('images/logo-partner-7.png'), alt="partner logo 7")
-    a.trusted-partners-item(href='#')
-      img(src=require('images/logo-partner-8.png'), alt="partner logo 8")
-    a.trusted-partners-item(href='#')
-      img(src=require('images/logo-partner-9.png'), alt="partner logo 9")
-    a.trusted-partners-item(href='#')
-      img(src=require('images/logo-partner-10.png'), alt="partner logo 10")
+
+include ../components/trusted-partners.pug
