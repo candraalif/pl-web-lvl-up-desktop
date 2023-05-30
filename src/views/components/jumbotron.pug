@@ -28,9 +28,10 @@ mixin jumbotron(region)
                   | Hotels
                 .product-form-tab-nav-item.active(data-id='flight')
                   +icon('ic-product-flight-fill')
-                  | Flights
-                  .sub-product-chevron(data-product-dropdown='flight')
-                    +icon('ic-system-chevron-down')
+                  .product-name-group
+                    | Flights
+                    .sub-product-chevron(data-product-dropdown='flight')
+                      +icon('ic-system-chevron-down')
                   //- Dropdown Flight
                   ul.product-dropdown(data-product-dropdown='flight', tabindex='-1')
                     li.product-dropdown-item
